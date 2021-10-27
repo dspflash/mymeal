@@ -1,0 +1,14 @@
+﻿<WndTap Name="mymeal_feemethodtime_v" Text="mymeal_feemethodtime">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_feemethodtime_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_feemethodtime.xml"/>
+<Ctrls><GroupBox  Name="GBmymeal_feemethodtime" id="mymeal_feemethodtime" Text="mymeal_feemethodtime" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_feemethodtime_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVmymeal_feemethodtime" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.mymeal_feemethodtime.GBDEDITmymeal_feemethodtime" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetmymeal_feemethodtime" Name="resetmymeal_feemethodtime" Size="50,20">	<OnClick>	<submit next="GBDEDITmymeal_feemethodtime" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_feemethodtime" Name="gsearchmymeal_feemethodtime" Size="50,20" visible="true">	<OnClick>	<search next="mymeal_feemethodtime_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITmymeal_feemethodtime" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_feemethodtime_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

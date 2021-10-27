@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_diningbillline"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_diningbillline" Name="mymeal_diningbilllineLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbillline m left join mymeal.mymeal_product m0 on m.productid=m0.productid left join mymeal.mymeal_unit m1 on m.unitid=m1.unitid</DbTable>
+<Index>billlineid</Index>
+<Data>m0.Name productid,m.diningtableid,m.billid,m.diningtime,m.tempproductname,m.statusid,m.price,m1.Name unitid,m.discount,m.discountprice,m.quantity,m.amount,m.diningnotes,m.ispackage,m.beforemergebillid,m.giveqty,m.isdelete,m.deletetime,m.returnnotes,m.returnqty,m.checkreturnqty,m.checkreturnamount,m.checkreturnnote,m.operatorid,m.backprintqty,m.givebackprintqty,m.returnbackprintqty,m.id_corp,m.billlineid</Data>
+<Order>billlineid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>billlineid='%{mymeal_diningbillline_vLst[billlineid]}'</Where></DbDetails><submit next="$this.mymeal_diningbillline.mymeal_diningbilllineLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_diningbillline</DbTable>
+<Where>billlineid='%{mymeal_diningbillline_vLst[billlineid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

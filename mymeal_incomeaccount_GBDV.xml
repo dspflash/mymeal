@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_incomeaccount"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_incomeaccount" Name="mymeal_incomeaccountLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_incomeaccount</DbTable>
+<Index>accountid</Index>
+<Data>name,code,isautocode,accounttype,bank,bankaccount,notes,isdelete,deletetime,accountid</Data>
+<Order>accountid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>accountid='%{mymeal_incomeaccount_vLst[accountid]}'</Where></DbDetails><submit next="$this.mymeal_incomeaccount.mymeal_incomeaccountLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_incomeaccount</DbTable>
+<Where>accountid='%{mymeal_incomeaccount_vLst[accountid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

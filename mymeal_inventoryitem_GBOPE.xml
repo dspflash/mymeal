@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_inventoryitem" Size="100,100"><Ctrls>
+<Button sqlpkinsert="inventoryid" Text="create" ToolTip="ttp_createmymeal_inventoryitem" Name="insertmymeal_inventoryitem" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_inventoryitem</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>productid[productid],stockid[stockid],quantity,price</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_inventoryitemLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_inventoryitem" Name="modifymymeal_inventoryitem" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_inventoryitem</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>productid[productid],stockid[stockid],quantity,price</Data>
+<DataEx/>
+<Where>inventoryid='%{inventoryid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_inventoryitemLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_inventoryitem" Name="resetmymeal_inventoryitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_inventoryitem" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_inventoryitem" Name="gsearchmymeal_inventoryitem" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_inventoryitemLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_inventoryitem" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

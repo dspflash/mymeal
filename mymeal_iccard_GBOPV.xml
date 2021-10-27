@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmymeal_iccard" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemymeal_iccard" Name="deletemymeal_iccard" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_iccard</DbTable>
+<Where>iccardid='%{mymeal_iccardLst[iccardid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_iccard" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_iccard" Name="searchmymeal_iccard" Size="50,20">
+			  <OnClick><submit next="mymeal_iccardLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPmymeal_iccardLst" OnClick="(mymeal_iccardLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREmymeal_iccardLst" OnClick="(mymeal_iccardLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPmymeal_iccardLst" OnClick="(mymeal_iccardLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

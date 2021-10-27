@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_businesstime"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_businesstime" Name="mymeal_businesstimeLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Index>timeid</Index>
+<Data>name,starttime,endtime,displayorder,isdelete,timeid</Data>
+<Order>timeid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>timeid='%{mymeal_businesstime_vLst[timeid]}'</Where></DbDetails><submit next="$this.mymeal_businesstime.mymeal_businesstimeLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Where>timeid='%{mymeal_businesstime_vLst[timeid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

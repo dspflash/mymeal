@@ -1,0 +1,249 @@
+﻿<GroupBox Name="GBDEDITmymeal_diningbill"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_tableid"><Ctrls>
+<Label Align="Right" Text="tableid" onload="init" Name="lb_tableid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_tableid" onload="init" Name="tableid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_diningtable</DbTable>
+<Index>tableid</Index>
+<Data>Name,TableID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_docno"><Ctrls>
+<Label Align="Right" Text="docno" Name="lb_docno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_docno" Name="docno" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_persons"><Ctrls>
+<Label Align="Right" Text="persons" Name="lb_persons" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_persons" Name="persons" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_reserveid"><Ctrls>
+<Label Align="Right" Text="reserveid" onload="init" Name="lb_reserveid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_reserveid" onload="init" Name="reserveid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Index>reserveid</Index>
+<Data>CustomerName,ReserveID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_statusid" Visible="false"><Ctrls>
+<Label Align="Right" Text="statusid" overlap="pre" Name="lb_statusid" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_statusid" overlap="pre" Name="statusid" readonly="true" Size="170,100" Visible="false">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumid</Index>
+<Data>EnumValue,EnumId</Data>
+<Where>enumtype='dining_status'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_memberid"><Ctrls>
+<Label Align="Right" Text="memberid" onload="init" Name="lb_memberid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_memberid" onload="init" Name="memberid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_member</DbTable>
+<Index>memberid</Index>
+<Data>Name,MemberID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_iccardid"><Ctrls>
+<Label Align="Right" Text="iccardid" Name="lb_iccardid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_iccardid" Name="iccardid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_entrytypeid"><Ctrls>
+<Label Align="Right" Text="entrytypeid" onload="init" Name="lb_entrytypeid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_entrytypeid" onload="init" Name="entrytypeid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Index>entrytypeid</Index>
+<Data>Name,EntryTypeID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_docdate"><Ctrls>
+<Label Align="Right" Text="docdate" Name="lb_docdate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_docdate" Name="docdate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningdate"><Ctrls>
+<Label Align="Right" Text="diningdate" Name="lb_diningdate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_diningdate" Name="diningdate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_checkoutdate"><Ctrls>
+<Label Align="Right" Text="checkoutdate" Name="lb_checkoutdate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_checkoutdate" Name="checkoutdate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_departmentid"><Ctrls>
+<Label Align="Right" Text="departmentid" onload="init" Name="lb_departmentid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_departmentid" onload="init" Name="departmentid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Index>departmentid</Index>
+<Data>Name,DepartmentID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_shiftid"><Ctrls>
+<Label Align="Right" Text="shiftid" onload="init" Name="lb_shiftid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_shiftid" onload="init" Name="shiftid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Index>shiftid</Index>
+<Data>DocNo,ShiftID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_possiteid"><Ctrls>
+<Label Align="Right" Text="possiteid" onload="init" Name="lb_possiteid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_possiteid" onload="init" Name="possiteid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Index>possiteid</Index>
+<Data>Name,PosSiteID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_stockid"><Ctrls>
+<Label Align="Right" Text="stockid" onload="init" Name="lb_stockid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_stockid" onload="init" Name="stockid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_stock</DbTable>
+<Index/>
+<Data>Name,StockID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_waiterid"><Ctrls>
+<Label Align="Right" Text="waiterid" onload="init" Name="lb_waiterid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_waiterid" onload="init" Name="waiterid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Index>employeeid</Index>
+<Data>Name,EmployeeID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_expendamount"><Ctrls>
+<Label Align="Right" Text="expendamount" Name="lb_expendamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_expendamount" Name="expendamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_feeamount"><Ctrls>
+<Label Align="Right" Text="feeamount" Name="lb_feeamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_feeamount" Name="feeamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_feemethodid"><Ctrls>
+<Label Align="Right" Text="feemethodid" onload="init" Name="lb_feemethodid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_feemethodid" onload="init" Name="feemethodid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_feemethod</DbTable>
+<Index>feemethodid</Index>
+<Data>FeeName,FeeMethodID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discountoperatorid"><Ctrls>
+<Label Align="Right" Text="discountoperatorid" onload="init" Name="lb_discountoperatorid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_discountoperatorid" onload="init" Name="discountoperatorid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Index>employeeid</Index>
+<Data>Name,EmployeeID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discountamount"><Ctrls>
+<Label Align="Right" Text="discountamount" Name="lb_discountamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_discountamount" Name="discountamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_alldiscountamount"><Ctrls>
+<Label Align="Right" Text="alldiscountamount" Name="lb_alldiscountamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_alldiscountamount" Name="alldiscountamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_payableamount"><Ctrls>
+<Label Align="Right" Text="payableamount" Name="lb_payableamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_payableamount" Name="payableamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_returnamount"><Ctrls>
+<Label Align="Right" Text="returnamount" Name="lb_returnamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnamount" Name="returnamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_payamount"><Ctrls>
+<Label Align="Right" Text="payamount" Name="lb_payamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_payamount" Name="payamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_coinsamount"><Ctrls>
+<Label Align="Right" Text="coinsamount" Name="lb_coinsamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_coinsamount" Name="coinsamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discountnotes"><Ctrls>
+<Label Align="Right" Text="discountnotes" Name="lb_discountnotes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_discountnotes" Name="discountnotes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_printqty"><Ctrls>
+<Label Align="Right" Text="printqty" Name="lb_printqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_printqty" Name="printqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_billnotes"><Ctrls>
+<Label Align="Right" Text="billnotes" Name="lb_billnotes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_billnotes" Name="billnotes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_checkoutnotes"><Ctrls>
+<Label Align="Right" Text="checkoutnotes" Name="lb_checkoutnotes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_checkoutnotes" Name="checkoutnotes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_operatorid"><Ctrls>
+<Label Align="Right" Text="operatorid" onload="init" Name="lb_operatorid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_operatorid" onload="init" Name="operatorid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Index>employeeid</Index>
+<Data>Name,EmployeeID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_timeid"><Ctrls>
+<Label Align="Right" Text="timeid" onload="init" Name="lb_timeid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_timeid" onload="init" Name="timeid" Size="170,20">
+	<DbDetails>
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Index>timeid</Index>
+<Data>Name,TimeID</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ismasterbill"><Ctrls>
+<CheckBox Text="ismasterbill" ToolTip="ttp_ismasterbill" Name="ismasterbill" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_masterbillid"><Ctrls>
+<Label Align="Right" Text="masterbillid" onload="init" Name="lb_masterbillid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_masterbillid" onload="init" Name="masterbillid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_diningbill</DbTable>
+<Index>billid</Index>
+<Data>DocNo,BillID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningserial"><Ctrls>
+<Label Align="Right" Text="diningserial" Name="lb_diningserial" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_diningserial" Name="diningserial" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dataversion"><Ctrls>
+<Label Align="Right" Text="dataversion" Name="lb_dataversion" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_dataversion" Name="dataversion" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isinvoice"><Ctrls>
+<CheckBox Text="isinvoice" ToolTip="ttp_isinvoice" Name="isinvoice" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_isdelete" Visible="false"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" overlap="pre" Name="isdelete" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_deletetime" Visible="false"><Ctrls>
+<Label Align="Right" Text="deletetime" overlap="pre" Name="lb_deletetime" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" overlap="pre" Name="deletetime" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_billid" Visible="false"><Ctrls>
+<Label Align="Right" Text="billid" overlap="pre" Name="lb_billid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_billid" overlap="pre" Name="billid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{billid}'"><SetVisible name="insertmymeal_diningbill" Visible="0"/><SetVisible name="modifymymeal_diningbill" Visible="1"/><else/><SetVisible name="insertmymeal_diningbill" Visible="1"/><SetVisible name="modifymymeal_diningbill" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

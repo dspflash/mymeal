@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_employee" Size="100,100"><Ctrls>
+<Button sqlpkinsert="employeeid" Text="create" ToolTip="ttp_createmymeal_employee" Name="insertmymeal_employee" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,code,isautocode,shortcode,sex,identityno,birthday,address,mobilephone,telephone,notes,employdate,departmentid,iswaiter,rankid[rankid],isvoid</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_employeeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_employee" Name="modifymymeal_employee" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,code,isautocode,shortcode,sex,identityno,birthday,address,mobilephone,telephone,notes,employdate,departmentid,iswaiter,rankid[rankid],isvoid</Data>
+<DataEx/>
+<Where>employeeid='%{employeeid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_employeeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_employee" Name="resetmymeal_employee" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_employee" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_employee" Name="gsearchmymeal_employee" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_employeeLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_employee" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

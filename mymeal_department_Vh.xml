@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_department" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_departmentLst" ToolTip="ttp_mymeal_department" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_department</DbTable>
+<Index>departmentid</Index>
+<Data>departmenttype,name,isautocode,code,parentid,notes,isdelete,deletetime,departmentid</Data>
+<Order>departmentid</Order></DbDetails>
+<OnClick>
+<if cond="%{departmentid}"><SetVisible name="insertmymeal_department" Visible="0"/><SetVisible name="modifymymeal_department" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

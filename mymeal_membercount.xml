@@ -1,0 +1,84 @@
+<WndTap Name="mymeal_membercount" Text="mymeal_membercount" Ver="2">
+<xi:include href="lan\mymeal_membercount.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_membercount" id="mymeal_membercount" Text="mymeal_membercount" Size="100,100"><Ctrls>
+<GroupBox Name="GB_memberid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_memberid" Size="60,20" Text="memberid" Align="Right"/>
+<TextBox Name="memberid" Size="170,20" Weight="170" ToolTip="ttp_memberid"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_counttype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_counttype" Size="60,20" Text="counttype" Align="Right"/>
+<TextBox Name="counttype" Size="170,20" Weight="170" ToolTip="ttp_counttype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_exchangecount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_exchangecount" Size="60,20" Text="exchangecount" Align="Right"/>
+<TextBox Name="exchangecount" Size="170,20" Weight="170" ToolTip="ttp_exchangecount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_count" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_count" Size="60,20" Text="count" Align="Right"/>
+<TextBox Name="count" Size="170,20" Weight="170" ToolTip="ttp_count"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_counttime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_counttime" Size="60,20" Text="counttime" Align="Right"/>
+<DateTime Name="counttime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_counttime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_countid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_countid" Size="60,20" Text="countid" Align="Right"/>
+<TextBox Name="countid" Size="170,20" Weight="170" ToolTip="ttp_countid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_membercount" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_membercount" Size="50,20" Text="create" ToolTip="ttp_createmymeal_membercount">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_membercount</DbTable>
+<Data>memberid,counttype,exchangecount,count,counttime,notes,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_membercount" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_membercount" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_membercount">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_membercount</DbTable>
+<Data>memberid,counttype,exchangecount,count,counttime,notes,id_corp</Data>
+<Where>countid='%{mymeal_membercountLst[countid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_membercount" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_membercount" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_membercount">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_membercount</DbTable>
+<Where>countid='%{mymeal_membercountLst[countid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_membercount" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_membercount" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_membercount">
+			  <OnClick><submit next="mymeal_membercountLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_membercountLst" Size="40,20" Text="firstpage" OnClick="(mymeal_membercountLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_membercountLst" Size="40,20" Text="prepage" OnClick="(mymeal_membercountLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_membercountLst" Size="40,20" Text="nextpage" OnClick="(mymeal_membercountLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_membercount" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_membercountLst" ToolTip="ttp_mymeal_membercount" Size="700,420" PageSize="10" loadedclick="0" Heading="memberid,55;counttype,160;exchangecount,55;count,55;counttime,150;notes,20;id_corp,55;countid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_membercount</DbTable>
+<Index>countid='%{mymeal_membercountLst[countid]}'</Index>
+<Data>memberid,counttype,exchangecount,count,counttime,notes,id_corp,countid</Data>
+<Order>countid</Order></DbDetails></ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

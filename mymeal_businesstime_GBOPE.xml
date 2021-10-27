@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_businesstime" Size="100,100"><Ctrls>
+<Button sqlpkinsert="timeid" Text="create" ToolTip="ttp_createmymeal_businesstime" Name="insertmymeal_businesstime" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,starttime,endtime,displayorder</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_businesstimeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_businesstime" Name="modifymymeal_businesstime" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,starttime,endtime,displayorder</Data>
+<DataEx/>
+<Where>timeid='%{timeid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_businesstimeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_businesstime" Name="resetmymeal_businesstime" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_businesstime" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_businesstime" Name="gsearchmymeal_businesstime" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_businesstimeLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_businesstime" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

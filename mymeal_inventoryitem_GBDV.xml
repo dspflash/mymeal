@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_inventoryitem"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_inventoryitem" Name="mymeal_inventoryitemLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_inventoryitem m left join mymeal.mymeal_product m0 on m.productid=m0.productid left join mymeal.mymeal_stock m1 on m.stockid=m1.stockid</DbTable>
+<Index>inventoryid</Index>
+<Data>m0.Name productid,m1.Name stockid,m.quantity,m.price,m.inventoryid</Data>
+<Order>inventoryid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>inventoryid='%{mymeal_inventoryitem_vLst[inventoryid]}'</Where></DbDetails><submit next="$this.mymeal_inventoryitem.mymeal_inventoryitemLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_inventoryitem</DbTable>
+<Where>inventoryid='%{mymeal_inventoryitem_vLst[inventoryid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

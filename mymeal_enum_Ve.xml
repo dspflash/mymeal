@@ -1,0 +1,13 @@
+﻿<WndTap Name="mymeal_enum" Text="mymeal_enum" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\mymeal_enum.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_enum" id="mymeal_enum" Text="mymeal_enum" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_enum_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_enum_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_enum_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertmymeal_enum" Visible="1"/><SetVisible name="modifymymeal_enum" Visible="0"/></OnActivate>
+</WndTap>

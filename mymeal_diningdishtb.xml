@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<WndTap Text="mymeal_diningdishtb" Name="mymeal_diningdishtb" Ver="2">
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_diningbillline.xml"/>
+	<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_diningdish.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_diningdishorder.xml"/>
+	</WndTaps>
+<Ctrls>
+<GroupBox Text="mymeal_diningbillline" Name="GBmymeal_diningbillline" id="mymeal_diningbillline" Size="100,100"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningtableid"><Ctrls>
+<Label Align="Right" Text="diningtableid" Name="lb_diningtableid" Size="60,20"/>
+<TextBox Weight="50" ToolTip="ttp_diningtableid" Name="diningtableid" Size="50,20">
+<DbDetails>
+<DbTable>mymeal.mymeal_diningbill as db inner join mymeal.mymeal_diningtable as dt on db.tableid=dt.tableid</DbTable>
+<Data>dt.Name,dt.TableID as diningtableid</Data>
+<queryFormat/></DbDetails></TextBox>
+<TextBox ToolTip="ttp_billid" Name="billid" Size="80,20" minlength="5">
+  <OnEnChange><DbDetails><Where>BillID='%{BillID}'</Where></DbDetails><submit next="diningtableid" namelist="DbDetails"/><submit next="mymeal_diningbilllineLst" namelist="DbDetails"/></OnEnChange></TextBox>
+<Button Name="barcode" signInRequired = "true" Size="40,20" Text="扫码" OnClick="(billid)barcode"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" overlap="pre" Name="lb_id_corp" Size="60,20" Visible="false"/>
+<TextBox Weight="170" ToolTip="ttp_id_corp" overlap="pre" Name="id_corp" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_billlineid"><Ctrls>
+<Label Align="Right" Text="billlineid" overlap="pre" Name="lb_billlineid" Size="60,20" Visible="false"/>
+<TextBox Weight="170" ToolTip="ttp_billlineid" overlap="pre" Name="billlineid" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPmymeal_diningbillline" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemymeal_diningbillline" Name="deletemymeal_diningbillline" Size="50,20">
+  <OnClick>
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbillline</DbTable>
+<Where>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+  <submit namelist="DbDetails"/><submit next="searchmymeal_diningbillline" function="click"/>
+  </OnClick>
+  </Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_diningbillline" Name="searchmymeal_diningbillline" Size="50,20">
+        <OnClick><submit next="mymeal_diningbilllineLst"/>  </OnClick>
+</Button>
+<Button Text="dish" Name="dish" Size="40,20">
+<OnClick><if cond="!%{billid}"><alert expr="请先开台"/><else/>
+<assign name="mymeal_diningdishtb.mymeal_diningdish.billid" expr="%{billid}"/></if></OnClick>
+</Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_diningbillline"><Ctrls>
+<ListCtrl Sum="0,1" sumcols="4" Heading="productid,55;tempproductname,320;statusid,120;quantity,90;amount,90;diningnotes,20;" loadedclick="0" ToolTip="ttp_mymeal_diningbillline" Name="mymeal_diningbilllineLst" Size="700,420" PageSize="10">
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbillline as b inner join mymeal.mymeal_product as p on b.productid=p.productid</DbTable>
+<Index>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Index>
+<Data>b.productid,p.name,b.statusid,b.quantity,b.amount,b.diningnotes,b.ispackage,b.id_corp,b.billlineid</Data>
+<Order>billlineid</Order>
+<Where>BillID='%{BillID}'</Where>
+</DbDetails>
+<OnClick><assign name="productid[productid]" function="SetSel" expr="%{mymeal_diningbilllineLst[productid]}"/><assign name="statusid[enumvalue]" function="SetSel" expr="%{mymeal_diningbilllineLst[statusid]}"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+  <OnChanged/>
+  <OnActivate/>
+  </WndTap>

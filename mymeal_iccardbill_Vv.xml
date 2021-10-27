@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_iccardbill" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_iccardbill_vLst" ToolTip="ttp_mymeal_iccardbill" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_iccardbill m left join mymeal.mymeal_iccard m0 on m.iccardid=m0.iccardid left join mymeal.mymeal_member m1 on m.memberid=m1.memberid left join mymeal.mymeal_workshift m2 on m.shiftid=m2.shiftid left join mymeal.mymeal_entrytype m3 on m.entrytypeid=m3.entrytypeid left join mymeal.mymeal_diningbill m4 on m.billid=m4.billid</DbTable>
+<Index>icbillid</Index>
+<Data>m0.Code iccardid,m1.Name memberid,m2.DocNo shiftid,m.docno,m3.Name entrytypeid,m4.DocNo billid,m.docdate,m.amount,m.incomeamount,m.notes,m.isdelete,m.deletetime,m.icbillid</Data>
+<Order>icbillid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>icbillid='%{mymeal_iccardbill_vLst[icbillid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_iccardbill.mymeal_iccardbillLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_iccardbill</DbTable>
+<Where>icbillid='%{mymeal_iccardbill_vLst[icbillid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

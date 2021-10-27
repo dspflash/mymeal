@@ -1,0 +1,158 @@
+<WndTap Name="mymeal_member" Text="mymeal_member" Ver="2">
+<xi:include href="lan\mymeal_member.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_member" id="mymeal_member" Text="mymeal_member" Size="100,100"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isautocode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocode" Size="230,20" Text="isautocode" ToolTip="ttp_isautocode"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_cardtype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_cardtype" Size="60,20" Text="cardtype" Align="Right"/>
+<TextBox Name="cardtype" Size="170,20" Weight="170" ToolTip="ttp_cardtype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_rankid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_rankid" Size="60,20" Text="rankid" Align="Right" OnLoad="init"/>
+<ComboBox Name="rankid" Size="170,100" Weight="170"  ToolTip="ttp_rankid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_memberrank</DbTable>
+<Data>EnumValue,EnumKey</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_birthday" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_birthday" Size="60,20" Text="birthday" Align="Right"/>
+<DateTime Name="birthday" Format="yyyy-MM-dd" Size="170,20" Weight="170"  ToolTip="ttp_birthday"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_sex" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sex" Size="60,20" Text="sex" Align="Right" OnLoad="init"/>
+<ComboBox Name="sex" Size="170,100" Weight="170" ToolTip="ttp_sex" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal%{session.dbext}.mymeal_enum</DbTable>
+<Data>EnumValue,Enumkey</Data>
+<Where>enumtype='SEX'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="140,20" Weight="140" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_mobilephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mobilephone" Size="60,20" Text="mobilephone" Align="Right"/>
+<TextBox Name="mobilephone" Size="140,20" Weight="140" ToolTip="ttp_mobilephone"></TextBox>
+<MagicCtrl Name="dialmobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{mobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_iscardvalidate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="iscardvalidate" Size="230,20" Text="iscardvalidate" ToolTip="ttp_iscardvalidate"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_cardvalidate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_cardvalidate" Size="60,20" Text="cardvalidate" Align="Right"/>
+<DateTime Name="cardvalidate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_cardvalidate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_cardpassword" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_cardpassword" Size="60,20" Text="cardpassword" Align="Right"/>
+<TextBox Name="cardpassword" Size="170,20" Weight="170" ToolTip="ttp_cardpassword"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_consumecount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_consumecount" Size="60,20" Text="consumecount" Align="Right"/>
+<TextBox Name="consumecount" Size="170,20" Weight="170" ToolTip="ttp_consumecount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_lastconsumecount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_lastconsumecount" Size="60,20" Text="lastconsumecount" Align="Right"/>
+<TextBox Name="lastconsumecount" Size="170,20" Weight="170" ToolTip="ttp_lastconsumecount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_lastconsumecounttime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_lastconsumecounttime" Size="60,20" Text="lastconsumecounttime" Align="Right"/>
+<DateTime Name="lastconsumecounttime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_lastconsumecounttime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_balanceamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_balanceamount" Size="60,20" Text="balanceamount" Align="Right"/>
+<TextBox Name="balanceamount" Size="170,20" Weight="170" ToolTip="ttp_balanceamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isautocount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocount" Size="230,20" Text="isautocount" ToolTip="ttp_isautocount"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_istakediscount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="istakediscount" Size="230,20" Text="istakediscount" ToolTip="ttp_istakediscount"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memberid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_memberid" Size="60,20" Text="memberid" Align="Right"/>
+<TextBox Name="memberid" Size="170,20" Weight="170" ToolTip="ttp_memberid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_member" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_member" Size="50,20" Text="create" ToolTip="ttp_createmymeal_member">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_member</DbTable>
+<Data>name,code,isautocode,cardtype,rankid[rankid],birthday,sex[Enumkey],telephone,mobilephone,iscardvalidate,address,cardvalidate,cardpassword,consumecount,lastconsumecount,lastconsumecounttime,balanceamount,isautocount,istakediscount,notes,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_member" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_member" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_member">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_member</DbTable>
+<Data>name,code,isautocode,cardtype,rankid[rankid],birthday,sex[Enumkey],telephone,mobilephone,iscardvalidate,address,cardvalidate,cardpassword,consumecount,lastconsumecount,lastconsumecounttime,balanceamount,isautocount,istakediscount,notes,isdelete,deletetime,id_corp</Data>
+<Where>memberid='%{mymeal_memberLst[memberid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_member" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_member" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_member">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_member</DbTable>
+<Where>memberid='%{mymeal_memberLst[memberid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_member" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_member" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_member">
+			  <OnClick><submit next="mymeal_memberLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_memberLst" Size="40,20" Text="firstpage" OnClick="(mymeal_memberLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_memberLst" Size="40,20" Text="prepage" OnClick="(mymeal_memberLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_memberLst" Size="40,20" Text="nextpage" OnClick="(mymeal_memberLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_member" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_memberLst" ToolTip="ttp_mymeal_member" Size="700,420" PageSize="10" loadedclick="0" Heading="name,320;code,160;isautocode,60;cardtype,160;rankid,120;birthday,90;sex,120;telephone,100;mobilephone,100;iscardvalidate,60;address,640;cardvalidate,150;cardpassword,100;consumecount,55;lastconsumecount,55;lastconsumecounttime,150;balanceamount,90;isautocount,60;istakediscount,60;notes,20;isdelete,60;deletetime,150;id_corp,55;memberid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_member</DbTable>
+<Index>memberid='%{mymeal_memberLst[memberid]}'</Index>
+<Data>name,code,isautocode,cardtype,rankid,birthday,sex,telephone,mobilephone,iscardvalidate,address,cardvalidate,cardpassword,consumecount,lastconsumecount,lastconsumecounttime,balanceamount,isautocount,istakediscount,notes,isdelete,deletetime,id_corp,memberid</Data>
+<Order>memberid</Order></DbDetails>
+<OnClick><assign name="rankid[rankid]" expr="%{mymeal_memberLst[rankid]}" function="SetSel"/>
+<assign name="sex[Enumkey]" expr="%{mymeal_memberLst[sex]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

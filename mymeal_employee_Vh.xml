@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_employee" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_employeeLst" ToolTip="ttp_mymeal_employee" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Index>employeeid</Index>
+<Data>name,code,isautocode,shortcode,sex,identityno,birthday,address,mobilephone,telephone,notes,employdate,departmentid,iswaiter,rankid,isvoid,isdelete,deletetime,employeeid</Data>
+<Order>employeeid</Order></DbDetails>
+<OnClick><assign name="rankid[rankid]" expr="%{mymeal_employeeLst[rankid]}" function="SetSel"/>
+<if cond="%{employeeid}"><SetVisible name="insertmymeal_employee" Visible="0"/><SetVisible name="modifymymeal_employee" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

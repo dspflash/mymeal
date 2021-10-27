@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_discount" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_discount_vLst" ToolTip="ttp_mymeal_discount" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_discount m left join mymeal.mymeal_product m0 on m.productid=m0.productid left join mymeal.mymeal_enum m1 on m.discounttype=m1.enumkey</DbTable>
+<Index>rankid</Index>
+<Data>m0.Name productid,m1.EnumValue discounttype,m.discount,m.discountprice,m.isdelete,m.deletetime,m.rankid</Data>
+<Order>rankid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>rankid='%{mymeal_discount_vLst[rankid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_discount.mymeal_discountLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_discount</DbTable>
+<Where>rankid='%{mymeal_discount_vLst[rankid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

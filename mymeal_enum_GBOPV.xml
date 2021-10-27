@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmymeal_enum" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemymeal_enum" Name="deletemymeal_enum" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Where>enumid='%{mymeal_enumLst[enumid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_enum" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_enum" Name="searchmymeal_enum" Size="50,20">
+			  <OnClick><submit next="mymeal_enumLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPmymeal_enumLst" OnClick="(mymeal_enumLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREmymeal_enumLst" OnClick="(mymeal_enumLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPmymeal_enumLst" OnClick="(mymeal_enumLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

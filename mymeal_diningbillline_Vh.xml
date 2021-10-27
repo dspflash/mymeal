@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_diningbillline" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_diningbilllineLst" ToolTip="ttp_mymeal_diningbillline" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbillline</DbTable>
+<Index>billlineid</Index>
+<Data>productid,diningtableid,billid,diningtime,tempproductname,statusid,price,unitid,discount,discountprice,quantity,amount,diningnotes,ispackage,beforemergebillid,giveqty,isdelete,deletetime,returnnotes,returnqty,checkreturnqty,checkreturnamount,checkreturnnote,operatorid,backprintqty,givebackprintqty,returnbackprintqty,id_corp,billlineid</Data>
+<Order>billlineid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" expr="%{mymeal_diningbilllineLst[productid]}" function="SetSel"/><assign name="unitid[unitid]" expr="%{mymeal_diningbilllineLst[unitid]}" function="SetSel"/>
+<if cond="%{billlineid}"><SetVisible name="insertmymeal_diningbillline" Visible="0"/><SetVisible name="modifymymeal_diningbillline" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_income" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_incomeLst" ToolTip="ttp_mymeal_income" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_income</DbTable>
+<Index>incomeid</Index>
+<Data>docno,accountid,methodname,statusid,entrytypeid,docdate,billno,departmentid,employeeid,operatorid,checkerid,notes,isdelete,deletetime,incomeid</Data>
+<Order>incomeid</Order></DbDetails>
+<OnClick><assign name="accountid[accountid]" expr="%{mymeal_incomeLst[accountid]}" function="SetSel"/><assign name="methodname[incomemethodid]" expr="%{mymeal_incomeLst[methodname]}" function="SetSel"/><assign name="statusid[enumkey]" expr="%{mymeal_incomeLst[statusid]}" function="SetSel"/><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_incomeLst[entrytypeid]}" function="SetSel"/><assign name="billno[billid]" expr="%{mymeal_incomeLst[billno]}" function="SetSel"/><assign name="departmentid[departmentid]" expr="%{mymeal_incomeLst[departmentid]}" function="SetSel"/><assign name="employeeid[employeeid]" expr="%{mymeal_incomeLst[employeeid]}" function="SetSel"/><assign name="operatorid[userloginid]" expr="%{mymeal_incomeLst[operatorid]}" function="SetSel"/><assign name="checkerid[userloginid]" expr="%{mymeal_incomeLst[checkerid]}" function="SetSel"/>
+<if cond="%{incomeid}"><SetVisible name="insertmymeal_income" Visible="0"/><SetVisible name="modifymymeal_income" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

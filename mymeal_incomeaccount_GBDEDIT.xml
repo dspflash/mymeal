@@ -1,0 +1,40 @@
+﻿<GroupBox Name="GBDEDITmymeal_incomeaccount"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_code"><Ctrls>
+<Label Align="Right" Text="code" Name="lb_code" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code" Name="code" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isautocode"><Ctrls>
+<CheckBox Text="isautocode" ToolTip="ttp_isautocode" Name="isautocode" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_accounttype"><Ctrls>
+<Label Align="Right" Text="accounttype" Name="lb_accounttype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_accounttype" Name="accounttype" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_bank"><Ctrls>
+<Label Align="Right" Text="bank" Name="lb_bank" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_bank" Name="bank" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_bankaccount"><Ctrls>
+<Label Align="Right" Text="bankaccount" Name="lb_bankaccount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_bankaccount" Name="bankaccount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_notes"><Ctrls>
+<Label Align="Right" Text="notes" Name="lb_notes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_notes" Name="notes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_isdelete" Visible="false"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" overlap="pre" Name="isdelete" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_deletetime" Visible="false"><Ctrls>
+<Label Align="Right" Text="deletetime" overlap="pre" Name="lb_deletetime" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" overlap="pre" Name="deletetime" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_accountid" Visible="false"><Ctrls>
+<Label Align="Right" Text="accountid" overlap="pre" Name="lb_accountid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_accountid" overlap="pre" Name="accountid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{accountid}'"><SetVisible name="insertmymeal_incomeaccount" Visible="0"/><SetVisible name="modifymymeal_incomeaccount" Visible="1"/><else/><SetVisible name="insertmymeal_incomeaccount" Visible="1"/><SetVisible name="modifymymeal_incomeaccount" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

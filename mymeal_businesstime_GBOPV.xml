@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmymeal_businesstime" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemymeal_businesstime" Name="deletemymeal_businesstime" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Where>timeid='%{mymeal_businesstimeLst[timeid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_businesstime" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_businesstime" Name="searchmymeal_businesstime" Size="50,20">
+			  <OnClick><submit next="mymeal_businesstimeLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPmymeal_businesstimeLst" OnClick="(mymeal_businesstimeLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREmymeal_businesstimeLst" OnClick="(mymeal_businesstimeLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPmymeal_businesstimeLst" OnClick="(mymeal_businesstimeLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

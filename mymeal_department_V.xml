@@ -1,0 +1,14 @@
+﻿<WndTap Name="mymeal_department_v" Text="mymeal_department">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_department_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_department.xml"/>
+<Ctrls><GroupBox  Name="GBmymeal_department" id="mymeal_department" Text="mymeal_department" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_department_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVmymeal_department" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.mymeal_department.GBDEDITmymeal_department" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetmymeal_department" Name="resetmymeal_department" Size="50,20">	<OnClick>	<submit next="GBDEDITmymeal_department" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_department" Name="gsearchmymeal_department" Size="50,20" visible="true">	<OnClick>	<search next="mymeal_department_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITmymeal_department" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_department_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

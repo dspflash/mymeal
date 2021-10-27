@@ -1,0 +1,174 @@
+﻿<GroupBox Name="GBDEDITmymeal_product"><Ctrls>
+<GroupBox Name="GB_producttype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_producttype" Size="60,20" Text="producttype" Align="Right"  onload="init"/>
+<ComboBox Name="producttype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_producttype"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_productcategory</DbTable>
+<Index></Index>
+<Data>distinct producttype</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_categoryid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_categoryid" Size="60,20" Text="categoryid" Align="Right"  onload="init"/>
+<ComboBox Name="categoryid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_categoryid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_productcategory</DbTable>
+<Index>categoryid</Index>
+<Data>Name,CategoryID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_shortcode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_shortcode" Size="60,20" Text="shortcode" Align="Right"/>
+<TextBox Name="shortcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_shortcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_images" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<MagicCtrl Name="images" ToolTip="ttp_images" Size="230,20" feature="carousel" Link="LinkLine:2;HoverColor:0x234511;UseHand:2" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Index>productid</Index>
+<Data>Name,images,ProductID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></MagicCtrl>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Text="" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isautocode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocode" Size="230,20" Text="isautocode" ToolTip="ttp_isautocode"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Text="" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ismanuallot" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismanuallot" Size="230,20" Text="ismanuallot" ToolTip="ttp_ismanuallot"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_istempproduct" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="istempproduct" Size="230,20" Text="istempproduct" ToolTip="ttp_istempproduct"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_purchaseprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_purchaseprice" Size="60,20" Text="purchaseprice" Align="Right"/>
+<TextBox Name="purchaseprice" Size="170,20" Text="" Weight="170" ToolTip="ttp_purchaseprice"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_retailprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_retailprice" Size="60,20" Text="retailprice" Align="Right"/>
+<TextBox Name="retailprice" Size="170,20" Text="" Weight="170" ToolTip="ttp_retailprice"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_iscurrentprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="iscurrentprice" Size="230,20" Text="iscurrentprice" ToolTip="ttp_iscurrentprice"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ismultilunit" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismultilunit" Size="230,20" Text="ismultilunit" ToolTip="ttp_ismultilunit"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_defaultunitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_defaultunitid" Size="60,20" Text="defaultunitid" Align="Right"  onload="init"/>
+<ComboBox Name="defaultunitid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_defaultunitid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Index>unitid</Index>
+<Data>Name,UnitID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_minunitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_minunitid" Size="60,20" Text="minunitid" Align="Right"  onload="init"/>
+<ComboBox Name="minunitid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_minunitid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Index>unitid</Index>
+<Data>Name,UnitID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ispackage" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ispackage" Size="230,20" Text="ispackage" ToolTip="ttp_ispackage"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdisplayassemble" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdisplayassemble" Size="230,20" Text="isdisplayassemble" ToolTip="ttp_isdisplayassemble"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isstockcontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isstockcontrol" Size="230,20" Text="isstockcontrol" ToolTip="ttp_isstockcontrol"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isminstockcontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isminstockcontrol" Size="230,20" Text="isminstockcontrol" ToolTip="ttp_isminstockcontrol"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_minquantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_minquantity" Size="60,20" Text="minquantity" Align="Right"/>
+<TextBox Name="minquantity" Size="170,20" Text="" Weight="170" ToolTip="ttp_minquantity"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ismaxstockcontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismaxstockcontrol" Size="230,20" Text="ismaxstockcontrol" ToolTip="ttp_ismaxstockcontrol"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_maxquantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_maxquantity" Size="60,20" Text="maxquantity" Align="Right"/>
+<TextBox Name="maxquantity" Size="170,20" Text="" Weight="170" ToolTip="ttp_maxquantity"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_iscostcontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="iscostcontrol" Size="230,20" Text="iscostcontrol" ToolTip="ttp_iscostcontrol"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_costmethod" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_costmethod" Size="60,20" Text="costmethod" Align="Right"  onload="init"/>
+<ComboBox Name="costmethod" Size="170,100" Text="" Weight="170"  ToolTip="ttp_costmethod"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumid</Index>
+<Data>EnumValue,EnumId</Data>
+<Where>enumtype='COST_METHOD'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvalidperiodcontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvalidperiodcontrol" Size="230,20" Text="isvalidperiodcontrol" ToolTip="ttp_isvalidperiodcontrol"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_validperiod" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_validperiod" Size="60,20" Text="validperiod" Align="Right"/>
+<TextBox Name="validperiod" Size="170,20" Text="" Weight="170" ToolTip="ttp_validperiod"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isdiscount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdiscount" Size="230,20" Text="isdiscount" ToolTip="ttp_isdiscount"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_discount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_discount" Size="60,20" Text="discount" Align="Right"/>
+<TextBox Name="discount" Size="170,20" Text="" Weight="170" ToolTip="ttp_discount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_iswaiterbonus" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="iswaiterbonus" Size="230,20" Text="iswaiterbonus" ToolTip="ttp_iswaiterbonus"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_waiterbonus" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_waiterbonus" Size="60,20" Text="waiterbonus" Align="Right"/>
+<TextBox Name="waiterbonus" Size="170,20" Text="" Weight="170" ToolTip="ttp_waiterbonus"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isrankbonus" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isrankbonus" Size="230,20" Text="isrankbonus" ToolTip="ttp_isrankbonus"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isbom" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isbom" Size="230,20" Text="isbom" ToolTip="ttp_isbom"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isbomfixcost" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isbomfixcost" Size="230,20" Text="isbomfixcost" ToolTip="ttp_isbomfixcost"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_bomfixcost" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_bomfixcost" Size="60,20" Text="bomfixcost" Align="Right"/>
+<TextBox Name="bomfixcost" Size="170,20" Text="" Weight="170" ToolTip="ttp_bomfixcost"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_productid" Size="60,20" Text="productid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="productid" Size="170,20" Text="" Weight="170" ToolTip="ttp_productid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{productid}'"><SetVisible name="insertmymeal_product" Visible="0"/><SetVisible name="modifymymeal_product" Visible="1"/><else/><SetVisible name="insertmymeal_product" Visible="1"/><SetVisible name="modifymymeal_product" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,34 @@
+﻿<GroupBox Name="GBDEDITmymeal_inventoryitem"><Ctrls>
+<GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_productid" Size="60,20" Text="productid" Align="Right"  onload="init"/>
+<ComboBox Name="productid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_productid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Index>productid</Index>
+<Data>Name,ProductID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_stockid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_stockid" Size="60,20" Text="stockid" Align="Right"  onload="init"/>
+<ComboBox Name="stockid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_stockid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_stock</DbTable>
+<Index>stockid</Index>
+<Data>Name,StockID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="170,20" Text="" Weight="170" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="170,20" Text="" Weight="170" ToolTip="ttp_price"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_inventoryid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_inventoryid" Size="60,20" Text="inventoryid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="inventoryid" Size="170,20" Text="" Weight="170" ToolTip="ttp_inventoryid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{inventoryid}'"><SetVisible name="insertmymeal_inventoryitem" Visible="0"/><SetVisible name="modifymymeal_inventoryitem" Visible="1"/><else/><SetVisible name="insertmymeal_inventoryitem" Visible="1"/><SetVisible name="modifymymeal_inventoryitem" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

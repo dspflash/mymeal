@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_feemethod" Size="100,100"><Ctrls>
+<Button sqlpkinsert="feemethodid" Text="create" ToolTip="ttp_createmymeal_feemethod" Name="insertmymeal_feemethod" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_feemethod</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>feename,ismaxfee,maxfee,customerminute,customerfee,ismergefirstandend,subunittimemethod,minutespertimeslice,ishalfhourfree,ishalfhourfee,isoverhalfhour</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_feemethodLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_feemethod" Name="modifymymeal_feemethod" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_feemethod</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>feename,ismaxfee,maxfee,customerminute,customerfee,ismergefirstandend,subunittimemethod,minutespertimeslice,ishalfhourfree,ishalfhourfee,isoverhalfhour</Data>
+<DataEx/>
+<Where>feemethodid='%{feemethodid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_feemethodLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_feemethod" Name="resetmymeal_feemethod" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_feemethod" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_feemethod" Name="gsearchmymeal_feemethod" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_feemethodLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_feemethod" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

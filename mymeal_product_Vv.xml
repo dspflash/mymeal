@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_product" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_product_vLst" ToolTip="ttp_mymeal_product" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_product m left join mymeal.mymeal_productcategory m0 on m.categoryid=m0.categoryid left join mymeal.mymeal_product m1 on m.images=m1.productid left join mymeal.mymeal_unit m2 on m.defaultunitid=m2.unitid left join mymeal.mymeal_unit m3 on m.minunitid=m3.unitid left join mymeal.mymeal_enum m4 on m.costmethod=m4.enumid</DbTable>
+<Index>productid</Index>
+<Data>m.producttype,m0.Name categoryid,m.name,m.shortcode,m1.Name images,m.code,m.isautocode,m.notes,m.ismanuallot,m.istempproduct,m.purchaseprice,m.retailprice,m.iscurrentprice,m.ismultilunit,m2.Name defaultunitid,m3.Name minunitid,m.ispackage,m.isdisplayassemble,m.isstockcontrol,m.isminstockcontrol,m.minquantity,m.ismaxstockcontrol,m.maxquantity,m.iscostcontrol,m4.EnumValue costmethod,m.isvalidperiodcontrol,m.validperiod,m.isdiscount,m.discount,m.iswaiterbonus,m.waiterbonus,m.isrankbonus,m.isbom,m.isbomfixcost,m.bomfixcost,m.isvoid,m.isdelete,m.deletetime,m.productid</Data>
+<Order>productid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>productid='%{mymeal_product_vLst[productid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_product.mymeal_productLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Where>productid='%{mymeal_product_vLst[productid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

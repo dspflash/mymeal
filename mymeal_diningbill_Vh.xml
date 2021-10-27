@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_diningbill" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_diningbillLst" ToolTip="ttp_mymeal_diningbill" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbill</DbTable>
+<Index>billid</Index>
+<Data>tableid,docno,persons,reserveid,statusid,memberid,iccardid,entrytypeid,docdate,diningdate,checkoutdate,departmentid,shiftid,possiteid,stockid,waiterid,expendamount,feeamount,feemethodid,discountoperatorid,discountamount,alldiscountamount,payableamount,returnamount,payamount,coinsamount,discountnotes,printqty,billnotes,checkoutnotes,operatorid,timeid,ismasterbill,masterbillid,diningserial,dataversion,isinvoice,isdelete,deletetime,billid</Data>
+<Order>billid</Order></DbDetails>
+<OnClick><assign name="tableid[tableid]" expr="%{mymeal_diningbillLst[tableid]}" function="SetSel"/><assign name="reserveid[reserveid]" expr="%{mymeal_diningbillLst[reserveid]}" function="SetSel"/><assign name="statusid[enumid]" expr="%{mymeal_diningbillLst[statusid]}" function="SetSel"/><assign name="memberid[memberid]" expr="%{mymeal_diningbillLst[memberid]}" function="SetSel"/><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_diningbillLst[entrytypeid]}" function="SetSel"/><assign name="departmentid[departmentid]" expr="%{mymeal_diningbillLst[departmentid]}" function="SetSel"/><assign name="shiftid[shiftid]" expr="%{mymeal_diningbillLst[shiftid]}" function="SetSel"/><assign name="possiteid[possiteid]" expr="%{mymeal_diningbillLst[possiteid]}" function="SetSel"/><assign name="waiterid[employeeid]" expr="%{mymeal_diningbillLst[waiterid]}" function="SetSel"/><assign name="feemethodid[feemethodid]" expr="%{mymeal_diningbillLst[feemethodid]}" function="SetSel"/><assign name="discountoperatorid[employeeid]" expr="%{mymeal_diningbillLst[discountoperatorid]}" function="SetSel"/><assign name="operatorid[employeeid]" expr="%{mymeal_diningbillLst[operatorid]}" function="SetSel"/><assign name="timeid[timeid]" expr="%{mymeal_diningbillLst[timeid]}" function="SetSel"/><assign name="masterbillid[billid]" expr="%{mymeal_diningbillLst[masterbillid]}" function="SetSel"/>
+<if cond="%{billid}"><SetVisible name="insertmymeal_diningbill" Visible="0"/><SetVisible name="modifymymeal_diningbill" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

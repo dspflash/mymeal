@@ -1,0 +1,14 @@
+﻿<WndTap Name="mymeal_entrytype_v" Text="mymeal_entrytype">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_entrytype_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_entrytype.xml"/>
+<Ctrls><GroupBox  Name="GBmymeal_entrytype" id="mymeal_entrytype" Text="mymeal_entrytype" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_entrytype_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVmymeal_entrytype" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.mymeal_entrytype.GBDEDITmymeal_entrytype" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetmymeal_entrytype" Name="resetmymeal_entrytype" Size="50,20">	<OnClick>	<submit next="GBDEDITmymeal_entrytype" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_entrytype" Name="gsearchmymeal_entrytype" Size="50,20" visible="true">	<OnClick>	<search next="mymeal_entrytype_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITmymeal_entrytype" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_entrytype_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

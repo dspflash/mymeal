@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_enum" Size="100,100"><Ctrls>
+<Button sqlpkinsert="enumid" Text="create" ToolTip="ttp_createmymeal_enum" Name="insertmymeal_enum" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>enumtype,enumkey,enumvalue,displayorder,images</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_enumLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_enum" Name="modifymymeal_enum" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>enumtype,enumkey,enumvalue,displayorder,images</Data>
+<DataEx/>
+<Where>enumid='%{enumid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_enumLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_enum" Name="resetmymeal_enum" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_enum" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_enum" Name="gsearchmymeal_enum" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_enumLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_enum" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

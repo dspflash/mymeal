@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_feemethod" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_feemethod_vLst" ToolTip="ttp_mymeal_feemethod" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_feemethod m</DbTable>
+<Index>feemethodid</Index>
+<Data>m.feename,m.ismaxfee,m.maxfee,m.customerminute,m.customerfee,m.ismergefirstandend,m.subunittimemethod,m.minutespertimeslice,m.ishalfhourfree,m.ishalfhourfee,m.isoverhalfhour,m.isdelete,m.deletetime,m.feemethodid</Data>
+<Order>feemethodid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>feemethodid='%{mymeal_feemethod_vLst[feemethodid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_feemethod.mymeal_feemethodLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_feemethod</DbTable>
+<Where>feemethodid='%{mymeal_feemethod_vLst[feemethodid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,83 @@
+﻿<GroupBox Name="GBDEDITmymeal_iccardbill"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_iccardid"><Ctrls>
+<Label Align="Right" Text="iccardid" onload="init" Name="lb_iccardid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_iccardid" onload="init" Name="iccardid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_iccard</DbTable>
+<Index>iccardid</Index>
+<Data>Code,MemberID,ICCardID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_memberid"><Ctrls>
+<Label Align="Right" Text="memberid" onload="init" Name="lb_memberid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_memberid" onload="init" Name="memberid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_member</DbTable>
+<Index>memberid</Index>
+<Data>Name,MemberID</Data>
+<Where>memberid='%{iccardid[memberid]}'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_shiftid"><Ctrls>
+<Label Align="Right" Text="shiftid" onload="init" Name="lb_shiftid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_shiftid" onload="init" Name="shiftid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Index>shiftid</Index>
+<Data>DocNo,ShiftID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_docno"><Ctrls>
+<Label Align="Right" Text="docno" Name="lb_docno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_docno" Name="docno" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_entrytypeid"><Ctrls>
+<Label Align="Right" Text="entrytypeid" onload="init" Name="lb_entrytypeid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_entrytypeid" onload="init" Name="entrytypeid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Index>entrytypeid</Index>
+<Data>Name,EntryTypeID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_billid"><Ctrls>
+<Label Align="Right" Text="billid" onload="init" Name="lb_billid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_billid" onload="init" Name="billid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_diningbill</DbTable>
+<Index>billid</Index>
+<Data>DocNo,BillID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_docdate"><Ctrls>
+<Label Align="Right" Text="docdate" Name="lb_docdate" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_docdate" Name="docdate" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_amount"><Ctrls>
+<Label Align="Right" Text="amount" Name="lb_amount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_amount" Name="amount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_incomeamount"><Ctrls>
+<Label Align="Right" Text="incomeamount" Name="lb_incomeamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_incomeamount" Name="incomeamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_notes"><Ctrls>
+<Label Align="Right" Text="notes" Name="lb_notes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_notes" Name="notes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_isdelete" Visible="false"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" overlap="pre" Name="isdelete" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_deletetime" Visible="false"><Ctrls>
+<Label Align="Right" Text="deletetime" overlap="pre" Name="lb_deletetime" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" overlap="pre" Name="deletetime" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_icbillid" Visible="false"><Ctrls>
+<Label Align="Right" Text="icbillid" overlap="pre" Name="lb_icbillid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_icbillid" overlap="pre" Name="icbillid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{icbillid}'"><SetVisible name="insertmymeal_iccardbill" Visible="0"/><SetVisible name="modifymymeal_iccardbill" Visible="1"/><else/><SetVisible name="insertmymeal_iccardbill" Visible="1"/><SetVisible name="modifymymeal_iccardbill" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,30 @@
+<Language name="mymeal_enum">
+<Lang name="mymeal_enum" value="枚举参数"/>
+<Lang name="enumtype" value=""/>
+<Lang name="ttp_enumtype" value=""/>
+<Lang name="enumkey" value=""/>
+<Lang name="ttp_enumkey" value=""/>
+<Lang name="enumvalue" value=""/>
+<Lang name="ttp_enumvalue" value=""/>
+<Lang name="displayorder" value=""/>
+<Lang name="ttp_displayorder" value=""/>
+<Lang name="images" value=""/>
+<Lang name="ttp_images" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="enumid" value=""/>
+<Lang name="ttp_enumid" value=""/>
+<Lang name="ttp_operationmymeal_enum" value="操作"/>
+<Lang name="ttp_createmymeal_enum" value="新增"/>
+<Lang name="ttp_modifymymeal_enum" value="修改"/>
+<Lang name="ttp_deletemymeal_enum" value="删除"/>
+<Lang name="ttp_refreshmymeal_enum" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="刷新"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

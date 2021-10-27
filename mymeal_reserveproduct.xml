@@ -1,0 +1,99 @@
+<WndTap Name="mymeal_reserveproduct" Text="mymeal_reserveproduct" Ver="2">
+<xi:include href="lan\mymeal_reserveproduct.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_reserveproduct" id="mymeal_reserveproduct" Text="mymeal_reserveproduct" Size="100,100"><Ctrls>
+<GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_productid" Size="60,20" Text="productid" Align="Right" OnLoad="init"/>
+<ComboBox Name="productid" Size="170,100" Weight="170"  ToolTip="ttp_productid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Data>Name,RetailPrice,ProductID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reserveid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reserveid" Size="60,20" Text="reserveid" Align="Right" OnLoad="init"/>
+<ComboBox Name="reserveid" Size="170,100" Weight="170"  ToolTip="ttp_reserveid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Data>DocNo,ReserveID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="170,20" Weight="170" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="170,20" Weight="170" ToolTip="ttp_price"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="170,20" Weight="170" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reserveproductid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reserveproductid" Size="60,20" Text="reserveproductid" Align="Right" OnLoad="init"/>
+<TextBox Name="reserveproductid" Size="170,100" Weight="170"  ToolTip="ttp_reserveproductid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_reserveproduct" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_reserveproduct" Size="50,20" Text="create" ToolTip="ttp_createmymeal_reserveproduct">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserveproduct</DbTable>
+<Data>productid[productid],reserveid[reserveid],quantity,price,amount,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserveproduct" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_reserveproduct" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_reserveproduct">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserveproduct</DbTable>
+<Data>productid[productid],reserveid[reserveid],quantity,price,amount,isdelete,deletetime,id_corp</Data>
+<Where>reserveproductid='%{mymeal_reserveproductLst[reserveproductid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserveproduct" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_reserveproduct" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_reserveproduct">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserveproduct</DbTable>
+<Where>reserveproductid='%{mymeal_reserveproductLst[reserveproductid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserveproduct" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_reserveproduct" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_reserveproduct">
+			  <OnClick><submit next="mymeal_reserveproductLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_reserveproductLst" Size="40,20" Text="firstpage" OnClick="(mymeal_reserveproductLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_reserveproductLst" Size="40,20" Text="prepage" OnClick="(mymeal_reserveproductLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_reserveproductLst" Size="40,20" Text="nextpage" OnClick="(mymeal_reserveproductLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_reserveproduct" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_reserveproductLst" ToolTip="ttp_mymeal_reserveproduct" Size="700,420" PageSize="10" loadedclick="0" Heading="productid,120;reserveid,120;quantity,90;price,90;amount,90;isdelete,60;deletetime,150;id_corp,55;reserveproductid,120;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserveproduct</DbTable>
+<Index>reserveproductid='%{mymeal_reserveproductLst[reserveproductid]}'</Index>
+<Data>productid,reserveid,quantity,price,amount,isdelete,deletetime,id_corp,reserveproductid</Data>
+<Order>reserveproductid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" expr="%{mymeal_reserveproductLst[productid]}" function="SetSel"/><assign name="reserveid[reserveid]" expr="%{mymeal_reserveproductLst[reserveid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

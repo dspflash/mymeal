@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_iccardbill" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_iccardbillLst" ToolTip="ttp_mymeal_iccardbill" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_iccardbill</DbTable>
+<Index>icbillid</Index>
+<Data>iccardid,memberid,shiftid,docno,entrytypeid,billid,docdate,amount,incomeamount,notes,isdelete,deletetime,icbillid</Data>
+<Order>icbillid</Order></DbDetails>
+<OnClick><assign name="iccardid[iccardid]" expr="%{mymeal_iccardbillLst[iccardid]}" function="SetSel"/><assign name="memberid[memberid]" expr="%{mymeal_iccardbillLst[memberid]}" function="SetSel"/><assign name="shiftid[shiftid]" expr="%{mymeal_iccardbillLst[shiftid]}" function="SetSel"/><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_iccardbillLst[entrytypeid]}" function="SetSel"/><assign name="billid[billid]" expr="%{mymeal_iccardbillLst[billid]}" function="SetSel"/>
+<if cond="%{icbillid}"><SetVisible name="insertmymeal_iccardbill" Visible="0"/><SetVisible name="modifymymeal_iccardbill" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

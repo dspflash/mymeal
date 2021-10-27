@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITmymeal_entrytype"><Ctrls>
+<GroupBox Name="GB_nameeng" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_nameeng" Size="60,20" Text="nameeng" Align="Right"/>
+<TextBox Name="nameeng" Size="170,20" Text="" Weight="170" ToolTip="ttp_nameeng"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_prefix" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_prefix" Size="60,20" Text="prefix" Align="Right"/>
+<TextBox Name="prefix" Size="170,20" Text="" Weight="170" ToolTip="ttp_prefix"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_entityname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_entityname" Size="60,20" Text="entityname" Align="Right"/>
+<TextBox Name="entityname" Size="170,20" Text="" Weight="170" ToolTip="ttp_entityname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_costcalcorder" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_costcalcorder" Size="60,20" Text="costcalcorder" Align="Right"/>
+<TextBox Name="costcalcorder" Size="170,20" Text="" Weight="170" ToolTip="ttp_costcalcorder"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_entrytypeid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_entrytypeid" Size="60,20" Text="entrytypeid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="entrytypeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_entrytypeid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{entrytypeid}'"><SetVisible name="insertmymeal_entrytype" Visible="0"/><SetVisible name="modifymymeal_entrytype" Visible="1"/><else/><SetVisible name="insertmymeal_entrytype" Visible="1"/><SetVisible name="modifymymeal_entrytype" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,75 @@
+<WndTap Name="mymeal_productcategory" Text="mymeal_productcategory" Ver="2">
+<xi:include href="lan\mymeal_productcategory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_productcategory" id="mymeal_productcategory" Text="mymeal_productcategory" Size="100,100"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm12 md6 lg4"><Ctrls><Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="140,20" Weight="140" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="140,20" Weight="140" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_producttype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_producttype" Size="60,20" Text="producttype" Align="Right"/>
+<ComboBox Name="producttype" Size="140,100" Weight="140" Items="ASSEMBEL_PRODUCT|DISH_PRODUCT|RAW_PRODUCT" ToolTip="ttp_producttype" SelectedIndex="0"></ComboBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_parentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_parentid" Size="60,20" Text="parentid" Align="Right"/>
+<TextBox Name="parentid" Size="140,20" Weight="140" ToolTip="ttp_parentid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_backprinttype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_backprinttype" Size="60,20" Text="backprinttype" Align="Right"/>
+<TextBox Name="backprinttype" Size="140,20" Weight="140" ToolTip="ttp_backprinttype"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_backprinter" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_backprinter" Size="60,20" Text="backprinter" Align="Right"/>
+<TextBox Name="backprinter" Size="140,20" Weight="140" ToolTip="ttp_backprinter"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_printwidth" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_printwidth" Size="60,20" Text="printwidth" Align="Right"/>
+<TextBox Name="printwidth" Size="140,20" Weight="140" ToolTip="ttp_printwidth"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_printtitle" Multiline="0" cols="xs12 sm12 md6 lg4"><Ctrls><Label Name="lb_printtitle" Size="60,20" Text="printtitle" Align="Right"/>
+<TextBox Name="printtitle" Size="140,20" Weight="140" ToolTip="ttp_printtitle"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_isprinttotal" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isprinttotal" Size="200,20" Text="isprinttotal" ToolTip="ttp_isprinttotal"></CheckBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_printtotalnumber" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_printtotalnumber" Size="60,20" Text="printtotalnumber" Align="Right"/>
+<TextBox Name="printtotalnumber" Size="140,20" Weight="140" ToolTip="ttp_printtotalnumber"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_printtotalfont" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_printtotalfont" Size="60,20" Text="printtotalfont" Align="Right"/>
+<TextBox Name="printtotalfont" Size="140,20" Weight="140" ToolTip="ttp_printtotalfont"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_isprintpart" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isprintpart" Size="200,20" Text="isprintpart" ToolTip="ttp_isprintpart"></CheckBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_printpartnumber" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_printpartnumber" Size="60,20" Text="printpartnumber" Align="Right"/>
+<TextBox Name="printpartnumber" Size="140,20" Weight="140" ToolTip="ttp_printpartnumber"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_printpartfont" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_printpartfont" Size="60,20" Text="printpartfont" Align="Right"/>
+<TextBox Name="printpartfont" Size="140,20" Weight="140" ToolTip="ttp_printpartfont"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_iscutpaper" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="iscutpaper" Size="200,20" Text="iscutpaper" ToolTip="ttp_iscutpaper"></CheckBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_isprintnumberexpend" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isprintnumberexpend" Size="200,20" Text="isprintnumberexpend" ToolTip="ttp_isprintnumberexpend"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isdelete" Size="200,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="140,20" Weight="140" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_images" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_images" Size="60,20" Text="images" Align="Right"/>
+<TextBox Name="images" Size="140,20" Weight="140" ToolTip="ttp_images"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="140,20" Weight="140" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_categoryid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_categoryid" Size="60,20" Text="categoryid" Align="Right"/>
+<TextBox Name="categoryid" Size="140,20" Weight="140" ToolTip="ttp_categoryid"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_productcategory" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_productcategory" Size="50,20" Text="create" ToolTip="ttp_insertmymeal_productcategory">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productcategory</DbTable><Data>name,code,producttype,parentid,backprinttype,backprinter,printwidth,printtitle,isprinttotal,printtotalnumber,printtotalfont,isprintpart,printpartnumber,printpartfont,iscutpaper,isprintnumberexpend,isdelete,deletetime,images,id_corp</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productcategory" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_productcategory" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_productcategory">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productcategory</DbTable><Data>name,code,producttype,parentid,backprinttype,backprinter,printwidth,printtitle,isprinttotal,printtotalnumber,printtotalfont,isprintpart,printpartnumber,printpartfont,iscutpaper,isprintnumberexpend,isdelete,deletetime,images,id_corp</Data><Where>categoryid='%{mymeal_productcategoryLst[categoryid]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productcategory" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_productcategory" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_productcategory">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productcategory</DbTable><Where>categoryid='%{mymeal_productcategoryLst[categoryid]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productcategory" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_productcategory" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_productcategory">
+			  <OnClick><submit next="mymeal_productcategoryLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_productcategoryLst" Size="40,20" Text="firstpage" OnClick="(mymeal_productcategoryLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_productcategoryLst" Size="40,20" Text="prepage" OnClick="(mymeal_productcategoryLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_productcategoryLst" Size="40,20" Text="nextpage" OnClick="(mymeal_productcategoryLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_productcategory" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_productcategoryLst" ToolTip="ttp_mymeal_productcategory" Size="700,420" PageSize="10" loadedclick="0" Heading="name,320;code,160;producttype,120;parentid,55;backprinttype,100;backprinter,20;printwidth,160;printtitle,320;isprinttotal,60;printtotalnumber,55;printtotalfont,160;isprintpart,60;printpartnumber,55;printpartfont,160;iscutpaper,60;isprintnumberexpend,60;isdelete,60;deletetime,150;images,250;id_corp,55;categoryid,55;" onload="init">
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productcategory</DbTable><Index>categoryid='%{mymeal_productcategoryLst[categoryid]}'</Index><Data>name,code,producttype,parentid,backprinttype,backprinter,printwidth,printtitle,isprinttotal,printtotalnumber,printtotalfont,isprintpart,printpartnumber,printpartfont,iscutpaper,isprintnumberexpend,isdelete,deletetime,images,id_corp,categoryid</Data><Order>categoryid</Order></DbDetails><DbDetails fcsm="1"><queryFormat>select %{data} from %{dbtable} limit %{StartRow},%{PgSize}</queryFormat></DbDetails></ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

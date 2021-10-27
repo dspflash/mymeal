@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_incomeaccount" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_incomeaccountLst" ToolTip="ttp_mymeal_incomeaccount" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_incomeaccount</DbTable>
+<Index>accountid</Index>
+<Data>name,code,isautocode,accounttype,bank,bankaccount,notes,isdelete,deletetime,accountid</Data>
+<Order>accountid</Order></DbDetails>
+<OnClick>
+<if cond="%{accountid}"><SetVisible name="insertmymeal_incomeaccount" Visible="0"/><SetVisible name="modifymymeal_incomeaccount" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

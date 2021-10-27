@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_entrytype" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_entrytypeLst" ToolTip="ttp_mymeal_entrytype" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Index>entrytypeid</Index>
+<Data>nameeng,name,prefix,entityname,costcalcorder,entrytypeid</Data>
+<Order>entrytypeid</Order></DbDetails>
+<OnClick>
+<if cond="%{entrytypeid}"><SetVisible name="insertmymeal_entrytype" Visible="0"/><SetVisible name="modifymymeal_entrytype" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

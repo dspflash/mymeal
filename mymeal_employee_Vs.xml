@@ -1,0 +1,94 @@
+﻿<GroupBox Name="GBDEDITmymeal_employee"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Text="" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isautocode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocode" Size="230,20" Text="isautocode" ToolTip="ttp_isautocode"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_shortcode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_shortcode" Size="60,20" Text="shortcode" Align="Right"/>
+<TextBox Name="shortcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_shortcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sex" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sex" Size="60,20" Text="sex" Align="Right"  onload="init"/>
+<ComboBox Name="sex" Size="170,100" Text="" Weight="170"  ToolTip="ttp_sex"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index></Index>
+<Data>EnumValue,EnumKey</Data>
+<Where>enumtype='sex'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_identityno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_identityno" Size="60,20" Text="identityno" Align="Right"/>
+<TextBox Name="identityno" Size="170,20" Text="" Weight="170" ToolTip="ttp_identityno"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_birthday" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_birthday" Size="60,20" Text="birthday" Align="Right"/>
+<DateTime Name="birthday" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170"  ToolTip="ttp_birthday"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Text="" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_mobilephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mobilephone" Size="60,20" Text="mobilephone" Align="Right"/>
+<TextBox Name="mobilephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_mobilephone"></TextBox>
+<MagicCtrl Name="dialmobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{mobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Text="" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_employdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_employdate" Size="60,20" Text="employdate" Align="Right"/>
+<DateTime Name="employdate" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170"  ToolTip="ttp_employdate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_departmentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_departmentid" Size="60,20" Text="departmentid" Align="Right"/>
+<ComboBox Name="departmentid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_departmentid">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Index></Index>
+<Data>Name,Code</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_iswaiter" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="iswaiter" Size="230,20" Text="iswaiter" ToolTip="ttp_iswaiter"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_rankid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_rankid" Size="60,20" Text="rankid" Align="Right"  onload="init"/>
+<ComboBox Name="rankid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_rankid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employeerank</DbTable>
+<Index>rankid</Index>
+<Data>Name,RankID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_employeeid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_employeeid" Size="60,20" Text="employeeid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="employeeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_employeeid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{employeeid}'"><SetVisible name="insertmymeal_employee" Visible="0"/><SetVisible name="modifymymeal_employee" Visible="1"/><else/><SetVisible name="insertmymeal_employee" Visible="1"/><SetVisible name="modifymymeal_employee" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

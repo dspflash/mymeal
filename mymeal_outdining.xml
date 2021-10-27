@@ -1,0 +1,97 @@
+<WndTap Name="mymeal_outdining" Text="mymeal_outdining" Ver="2">
+<xi:include href="lan\mymeal_outdining.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_outdining" id="mymeal_outdining" Text="mymeal_outdining" Size="100,100"><Ctrls>
+<GroupBox Name="GB_outdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_outdate" Size="60,20" Text="outdate" Align="Right"/>
+<DateTime Name="outdate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_outdate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_productid" Size="60,20" Text="productid" Align="Right" OnLoad="init"/>
+<ComboBox Name="productid" Size="170,100" Weight="170"  ToolTip="ttp_productid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Data>Name,ProductID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_unitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_unitid" Size="60,20" Text="unitid" Align="Right"/>
+<TextBox Name="unitid" Size="170,20" Weight="170" ToolTip="ttp_unitid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="170,20" Weight="170" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_restqtymin" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_restqtymin" Size="60,20" Text="restqtymin" Align="Right"/>
+<TextBox Name="restqtymin" Size="170,20" Weight="170" ToolTip="ttp_restqtymin"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_outdiningid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_outdiningid" Size="60,20" Text="outdiningid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="outdiningid" Size="170,20" Weight="170" ToolTip="ttp_outdiningid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_outdining" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_outdining" Size="50,20" Text="create" ToolTip="ttp_createmymeal_outdining">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_outdining</DbTable>
+<Data>outdate,productid[productid],unitid,quantity,isvoid,isdelete,deletetime,restqtymin,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_outdining" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_outdining" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_outdining">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_outdining</DbTable>
+<Data>outdate,productid[productid],unitid,quantity,isvoid,isdelete,deletetime,restqtymin,id_corp</Data>
+<Where>outdiningid='%{mymeal_outdiningLst[outdiningid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_outdining" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_outdining" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_outdining">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_outdining</DbTable>
+<Where>outdiningid='%{mymeal_outdiningLst[outdiningid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_outdining" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_outdining" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_outdining">
+			  <OnClick><submit next="mymeal_outdiningLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_outdiningLst" Size="40,20" Text="firstpage" OnClick="(mymeal_outdiningLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_outdiningLst" Size="40,20" Text="prepage" OnClick="(mymeal_outdiningLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_outdiningLst" Size="40,20" Text="nextpage" OnClick="(mymeal_outdiningLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_outdining" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_outdiningLst" ToolTip="ttp_mymeal_outdining" Size="700,420" PageSize="10" loadedclick="0" Heading="outdate,150;productid,120;unitid,55;quantity,90;isvoid,60;isdelete,60;deletetime,150;restqtymin,90;id_corp,55;outdiningid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_outdining</DbTable>
+<Index>outdiningid='%{mymeal_outdiningLst[outdiningid]}'</Index>
+<Data>outdate,productid,unitid,quantity,isvoid,isdelete,deletetime,restqtymin,id_corp,outdiningid</Data>
+<Order>outdiningid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" expr="%{mymeal_outdiningLst[productid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

@@ -1,0 +1,184 @@
+<WndTap Name="mymeal_receive" Text="mymeal_receive" Ver="2">
+<xi:include href="lan\mymeal_receive.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_receive" id="mymeal_receive" Text="mymeal_receive" Size="100,100"><Ctrls>
+<GroupBox Name="GB_docno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docno" Size="60,20" Text="docno" Align="Right"/>
+<TextBox Name="docno" Size="170,20" Weight="170" ToolTip="ttp_docno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_statusid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_statusid" Size="60,20" Text="statusid" Align="Right" OnLoad="init"/>
+<ComboBox Name="statusid" Size="170,100" Weight="170"  ToolTip="ttp_statusid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Data>EnumValue,EnumKey,EnumId</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_entrytypeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_entrytypeid" Size="60,20" Text="entrytypeid" Align="Right" OnLoad="init"/>
+<ComboBox Name="entrytypeid" Size="170,100" Weight="170"  ToolTip="ttp_entrytypeid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Data>Name,EntryTypeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_docdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docdate" Size="60,20" Text="docdate" Align="Right"/>
+<DateTime Name="docdate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_docdate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_supplierid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_supplierid" Size="60,20" Text="supplierid" Align="Right" OnLoad="init"/>
+<ComboBox Name="supplierid" Size="170,100" Weight="170"  ToolTip="ttp_supplierid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_supplier</DbTable>
+<Data>Name,SupplierID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_departmentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_departmentid" Size="60,20" Text="departmentid" Align="Right" OnLoad="init"/>
+<ComboBox Name="departmentid" Size="170,100" Weight="170"  ToolTip="ttp_departmentid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Data>Name,DepartmentID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_employeeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_employeeid" Size="60,20" Text="employeeid" Align="Right" OnLoad="init"/>
+<ComboBox Name="employeeid" Size="170,100" Weight="170"  ToolTip="ttp_employeeid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Data>Name,EmployeeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_stockid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_stockid" Size="60,20" Text="stockid" Align="Right" OnLoad="init"/>
+<ComboBox Name="stockid" Size="170,100" Weight="170"  ToolTip="ttp_stockid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_stock</DbTable>
+<Data>Name,StockID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_operatorid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_operatorid" Size="60,20" Text="operatorid" Align="Right" OnLoad="init"/>
+<ComboBox Name="operatorid" Size="170,100" Weight="170"  ToolTip="ttp_operatorid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Data>Name,UserLoginID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ischecked" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ischecked" Size="230,20" Text="ischecked" ToolTip="ttp_ischecked"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_checkerid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_checkerid" Size="60,20" Text="checkerid" Align="Right"/>
+<TextBox Name="checkerid" Size="170,20" Weight="170" ToolTip="ttp_checkerid"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="140,20" Weight="140" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="170,20" Weight="170" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_paymentamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_paymentamount" Size="60,20" Text="paymentamount" Align="Right"/>
+<TextBox Name="paymentamount" Size="170,20" Weight="170" ToolTip="ttp_paymentamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_productmemo" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_productmemo" Size="60,20" Text="productmemo" Align="Right"/>
+<TextBox Name="productmemo" Size="170,20" Weight="170" ToolTip="ttp_productmemo"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dataversion" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_dataversion" Size="60,20" Text="dataversion" Align="Right"/>
+<TextBox Name="dataversion" Size="170,20" Weight="170" ToolTip="ttp_dataversion"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_receiveid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_receiveid" Size="60,20" Text="receiveid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="receiveid" Size="170,20" Weight="170" ToolTip="ttp_receiveid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_contact" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_contact" Size="60,20" Text="contact" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="contact" Size="170,20" Weight="170" ToolTip="ttp_contact" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_contactid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_contactid" Size="60,20" Text="contactid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="contactid" Size="170,20" Weight="170" ToolTip="ttp_contactid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_receive" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_receive" Size="50,20" Text="create" ToolTip="ttp_createmymeal_receive">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receive</DbTable>
+<Data>docno,statusid[enumid],entrytypeid[entrytypeid],docdate,supplierid[supplierid],departmentid[departmentid],employeeid[employeeid],stockid[stockid],operatorid[userloginid],ischecked,checkerid,telephone,address,notes,amount,paymentamount,productmemo,isdelete,deletetime,dataversion,id_corp,contact,contactid</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_receive" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_receive" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_receive">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receive</DbTable>
+<Data>docno,statusid[enumid],entrytypeid[entrytypeid],docdate,supplierid[supplierid],departmentid[departmentid],employeeid[employeeid],stockid[stockid],operatorid[userloginid],ischecked,checkerid,telephone,address,notes,amount,paymentamount,productmemo,isdelete,deletetime,dataversion,id_corp,contact,contactid</Data>
+<Where>receiveid='%{mymeal_receiveLst[receiveid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_receive" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_receive" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_receive">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receive</DbTable>
+<Where>receiveid='%{mymeal_receiveLst[receiveid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_receive" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_receive" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_receive">
+			  <OnClick><submit next="mymeal_receiveLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_receiveLst" Size="40,20" Text="firstpage" OnClick="(mymeal_receiveLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_receiveLst" Size="40,20" Text="prepage" OnClick="(mymeal_receiveLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_receiveLst" Size="40,20" Text="nextpage" OnClick="(mymeal_receiveLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_receive" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_receiveLst" ToolTip="ttp_mymeal_receive" Size="700,420" PageSize="10" loadedclick="0" Heading="docno,100;statusid,120;entrytypeid,120;docdate,150;supplierid,120;departmentid,120;employeeid,120;stockid,120;operatorid,120;ischecked,60;checkerid,55;telephone,100;address,20;notes,20;amount,90;paymentamount,90;productmemo,640;isdelete,60;deletetime,150;dataversion,40;id_corp,55;receiveid,55;contact,55;contactid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receive</DbTable>
+<Index>receiveid='%{mymeal_receiveLst[receiveid]}'</Index>
+<Data>docno,statusid,entrytypeid,docdate,supplierid,departmentid,employeeid,stockid,operatorid,ischecked,checkerid,telephone,address,notes,amount,paymentamount,productmemo,isdelete,deletetime,dataversion,id_corp,receiveid,contact,contactid</Data>
+<Order>receiveid</Order></DbDetails>
+<OnClick><assign name="statusid[enumid]" expr="%{mymeal_receiveLst[statusid]}" function="SetSel"/><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_receiveLst[entrytypeid]}" function="SetSel"/><assign name="supplierid[supplierid]" expr="%{mymeal_receiveLst[supplierid]}" function="SetSel"/><assign name="departmentid[departmentid]" expr="%{mymeal_receiveLst[departmentid]}" function="SetSel"/><assign name="employeeid[employeeid]" expr="%{mymeal_receiveLst[employeeid]}" function="SetSel"/><assign name="stockid[stockid]" expr="%{mymeal_receiveLst[stockid]}" function="SetSel"/><assign name="operatorid[userloginid]" expr="%{mymeal_receiveLst[operatorid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

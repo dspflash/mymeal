@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_product" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_productLst" ToolTip="ttp_mymeal_product" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_product</DbTable>
+<Index>productid</Index>
+<Data>producttype,categoryid,name,shortcode,images,code,isautocode,notes,ismanuallot,istempproduct,purchaseprice,retailprice,iscurrentprice,ismultilunit,defaultunitid,minunitid,ispackage,isdisplayassemble,isstockcontrol,isminstockcontrol,minquantity,ismaxstockcontrol,maxquantity,iscostcontrol,costmethod,isvalidperiodcontrol,validperiod,isdiscount,discount,iswaiterbonus,waiterbonus,isrankbonus,isbom,isbomfixcost,bomfixcost,isvoid,isdelete,deletetime,productid</Data>
+<Order>productid</Order></DbDetails>
+<OnClick><assign name="categoryid[categoryid]" expr="%{mymeal_productLst[categoryid]}" function="SetSel"/><assign name="images[productid]" expr="%{mymeal_productLst[images]}" function="SetSel"/><assign name="defaultunitid[unitid]" expr="%{mymeal_productLst[defaultunitid]}" function="SetSel"/><assign name="minunitid[unitid]" expr="%{mymeal_productLst[minunitid]}" function="SetSel"/><assign name="costmethod[enumid]" expr="%{mymeal_productLst[costmethod]}" function="SetSel"/>
+<if cond="%{productid}"><SetVisible name="insertmymeal_product" Visible="0"/><SetVisible name="modifymymeal_product" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

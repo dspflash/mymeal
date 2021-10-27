@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><BXML debug="1">
+	<DbDetails>
+		<SubDriver>MySQL</SubDriver>
+		<Host>localhost</Host>
+		<database>mylayout</database>
+		<sqlMode>NO_BACKSLASH_ESCAPES</sqlMode>
+		<User>i3u</User>
+		<password>i3u</password>
+		
+		</DbDetails>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>	
+<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_businesstime_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_department_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_diningbill_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_product_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_discount_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_employee_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_entrytype_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_enum_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_feemethod_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_feemethodtime_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_iccard_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_iccardbill_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_income_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_incomeaccount_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_inventoryitem_v.xml"></xi:include>
+	</WndTaps>
+</BXML>

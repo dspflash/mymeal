@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmymeal_diningbillline" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemymeal_diningbillline" Name="deletemymeal_diningbillline" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbillline</DbTable>
+<Where>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_diningbillline" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_diningbillline" Name="searchmymeal_diningbillline" Size="50,20">
+			  <OnClick><submit next="mymeal_diningbilllineLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPmymeal_diningbilllineLst" OnClick="(mymeal_diningbilllineLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREmymeal_diningbilllineLst" OnClick="(mymeal_diningbilllineLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPmymeal_diningbilllineLst" OnClick="(mymeal_diningbilllineLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

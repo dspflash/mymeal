@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_iccard"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_iccard" Name="mymeal_iccardLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_iccard m left join mymeal.mymeal_member m0 on m.memberid=m0.memberid left join mymeal.mymeal_enum m1 on m.iccardtype=m1.enumkey</DbTable>
+<Index>iccardid</Index>
+<Data>m0.Name memberid,m1.EnumValue iccardtype,m.code,m.ispassword,m.password,m.issuedate,m.isvalidatecontrol,m.validate,m.isvoid,m.notes,m.isdelete,m.deletetime,m.iccardid</Data>
+<Order>iccardid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>iccardid='%{mymeal_iccard_vLst[iccardid]}'</Where></DbDetails><submit next="$this.mymeal_iccard.mymeal_iccardLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_iccard</DbTable>
+<Where>iccardid='%{mymeal_iccard_vLst[iccardid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

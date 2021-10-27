@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_department" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_department_vLst" ToolTip="ttp_mymeal_department" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_department m</DbTable>
+<Index>departmentid</Index>
+<Data>m.departmenttype,m.name,m.isautocode,m.code,m.parentid,m.notes,m.isdelete,m.deletetime,m.departmentid</Data>
+<Order>departmentid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>departmentid='%{mymeal_department_vLst[departmentid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_department.mymeal_departmentLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Where>departmentid='%{mymeal_department_vLst[departmentid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

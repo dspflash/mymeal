@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITmymeal_feemethodtime"><Ctrls>
+<GroupBox Name="GB_feemethodtimeno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_feemethodtimeno" Size="60,20" Text="feemethodtimeno" Align="Right"/>
+<TextBox Name="feemethodtimeno" Size="170,20" Text="" Weight="170" ToolTip="ttp_feemethodtimeno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_starttime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_starttime" Size="60,20" Text="starttime" Align="Right"/>
+<DateTime Name="starttime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_starttime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_endtime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_endtime" Size="60,20" Text="endtime" Align="Right"/>
+<DateTime Name="endtime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_endtime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_hoursbyfee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_hoursbyfee" Size="60,20" Text="hoursbyfee" Align="Right"/>
+<TextBox Name="hoursbyfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_hoursbyfee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_fee" Size="60,20" Text="fee" Align="Right"/>
+<TextBox Name="fee" Size="170,20" Text="" Weight="170" ToolTip="ttp_fee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_feemethodid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_feemethodid" Size="60,20" Text="feemethodid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="feemethodid" Size="170,20" Text="" Weight="170" ToolTip="ttp_feemethodid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{feemethodid}'"><SetVisible name="insertmymeal_feemethodtime" Visible="0"/><SetVisible name="modifymymeal_feemethodtime" Visible="1"/><else/><SetVisible name="insertmymeal_feemethodtime" Visible="1"/><SetVisible name="modifymymeal_feemethodtime" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

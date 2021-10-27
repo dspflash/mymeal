@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_enum" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_enumLst" ToolTip="ttp_mymeal_enum" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumid</Index>
+<Data>enumtype,enumkey,enumvalue,displayorder,images,enumid</Data>
+<Order>enumid</Order></DbDetails>
+<OnClick>
+<if cond="%{enumid}"><SetVisible name="insertmymeal_enum" Visible="0"/><SetVisible name="modifymymeal_enum" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

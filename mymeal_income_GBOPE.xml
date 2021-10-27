@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_income" Size="100,100"><Ctrls>
+<Button sqlpkinsert="incomeid" Text="create" ToolTip="ttp_createmymeal_income" Name="insertmymeal_income" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_income</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>docno,accountid[accountid],methodname[incomemethodid],statusid[enumkey],entrytypeid[entrytypeid],docdate,billno[billid],departmentid[departmentid],employeeid[employeeid],operatorid[userloginid],checkerid[userloginid],notes</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_incomeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_income" Name="modifymymeal_income" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_income</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>docno,accountid[accountid],methodname[incomemethodid],statusid[enumkey],entrytypeid[entrytypeid],docdate,billno[billid],departmentid[departmentid],employeeid[employeeid],operatorid[userloginid],checkerid[userloginid],notes</Data>
+<DataEx/>
+<Where>incomeid='%{incomeid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_incomeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_income" Name="resetmymeal_income" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_income" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_income" Name="gsearchmymeal_income" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_incomeLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_income" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

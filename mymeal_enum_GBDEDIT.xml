@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITmymeal_enum"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_enumtype"><Ctrls>
+<Label Align="Right" Text="enumtype" Name="lb_enumtype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enumtype" Name="enumtype" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_enumkey"><Ctrls>
+<Label Align="Right" Text="enumkey" Name="lb_enumkey" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enumkey" Name="enumkey" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_enumvalue"><Ctrls>
+<Label Align="Right" Text="enumvalue" Name="lb_enumvalue" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enumvalue" Name="enumvalue" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_displayorder"><Ctrls>
+<Label Align="Right" Text="displayorder" Name="lb_displayorder" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_displayorder" Name="displayorder" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_images"><Ctrls>
+<Label Align="Right" Text="images" Name="lb_images" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_images" Name="images" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_enumid" Visible="false"><Ctrls>
+<Label Align="Right" Text="enumid" overlap="pre" Name="lb_enumid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enumid" overlap="pre" Name="enumid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{enumid}'"><SetVisible name="insertmymeal_enum" Visible="0"/><SetVisible name="modifymymeal_enum" Visible="1"/><else/><SetVisible name="insertmymeal_enum" Visible="1"/><SetVisible name="modifymymeal_enum" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

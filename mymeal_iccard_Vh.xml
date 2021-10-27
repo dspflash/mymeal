@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_iccard" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_iccardLst" ToolTip="ttp_mymeal_iccard" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_iccard</DbTable>
+<Index>iccardid</Index>
+<Data>memberid,iccardtype,code,ispassword,password,issuedate,isvalidatecontrol,validate,isvoid,notes,isdelete,deletetime,iccardid</Data>
+<Order>iccardid</Order></DbDetails>
+<OnClick><assign name="memberid[memberid]" expr="%{mymeal_iccardLst[memberid]}" function="SetSel"/><assign name="iccardtype[enumkey]" expr="%{mymeal_iccardLst[iccardtype]}" function="SetSel"/>
+<if cond="%{iccardid}"><SetVisible name="insertmymeal_iccard" Visible="0"/><SetVisible name="modifymymeal_iccard" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

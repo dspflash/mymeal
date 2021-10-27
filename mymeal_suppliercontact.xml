@@ -1,0 +1,111 @@
+<WndTap Name="mymeal_suppliercontact" Text="mymeal_suppliercontact" Ver="2">
+<xi:include href="lan\mymeal_suppliercontact.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_suppliercontact" id="mymeal_suppliercontact" Text="mymeal_suppliercontact" Size="100,100"><Ctrls>
+<GroupBox Name="GB_contact" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_contact" Size="60,20" Text="contact" Align="Right"/>
+<TextBox Name="contact" Size="170,20" Weight="170" ToolTip="ttp_contact"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_supplierid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_supplierid" Size="60,20" Text="supplierid" Align="Right" OnLoad="init"/>
+<ComboBox Name="supplierid" Size="170,100" Weight="170"  ToolTip="ttp_supplierid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_supplier</DbTable>
+<Data>Name,SupplierID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="140,20" Weight="140" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_mobilephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mobilephone" Size="60,20" Text="mobilephone" Align="Right"/>
+<TextBox Name="mobilephone" Size="140,20" Weight="140" ToolTip="ttp_mobilephone"></TextBox>
+<MagicCtrl Name="dialmobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{mobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_email" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_email" Size="60,20" Text="email" Align="Right"/>
+<TextBox Name="email" Size="170,20" Weight="170" ToolTip="ttp_email"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_zipcode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_zipcode" Size="60,20" Text="zipcode" Align="Right"/>
+<TextBox Name="zipcode" Size="170,20" Weight="170" ToolTip="ttp_zipcode"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right"/>
+<TextBox Name="address" Size="170,20" Weight="170" ToolTip="ttp_address"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isnormal" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isnormal" Size="230,20" Text="isnormal" ToolTip="ttp_isnormal"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fax" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_fax" Size="60,20" Text="fax" Align="Right"/>
+<TextBox Name="fax" Size="170,20" Weight="170" ToolTip="ttp_fax"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_contactid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_contactid" Size="60,20" Text="contactid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="contactid" Size="170,20" Weight="170" ToolTip="ttp_contactid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_suppliercontact" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_suppliercontact" Size="50,20" Text="create" ToolTip="ttp_createmymeal_suppliercontact">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_suppliercontact</DbTable>
+<Data>contact,supplierid[supplierid],telephone,mobilephone,email,zipcode,address,isnormal,fax,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_suppliercontact" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_suppliercontact" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_suppliercontact">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_suppliercontact</DbTable>
+<Data>contact,supplierid[supplierid],telephone,mobilephone,email,zipcode,address,isnormal,fax,isdelete,deletetime,id_corp</Data>
+<Where>contactid='%{mymeal_suppliercontactLst[contactid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_suppliercontact" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_suppliercontact" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_suppliercontact">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_suppliercontact</DbTable>
+<Where>contactid='%{mymeal_suppliercontactLst[contactid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_suppliercontact" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_suppliercontact" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_suppliercontact">
+			  <OnClick><submit next="mymeal_suppliercontactLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_suppliercontactLst" Size="40,20" Text="firstpage" OnClick="(mymeal_suppliercontactLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_suppliercontactLst" Size="40,20" Text="prepage" OnClick="(mymeal_suppliercontactLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_suppliercontactLst" Size="40,20" Text="nextpage" OnClick="(mymeal_suppliercontactLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_suppliercontact" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_suppliercontactLst" ToolTip="ttp_mymeal_suppliercontact" Size="700,420" PageSize="10" loadedclick="0" Heading="contact,100;supplierid,120;telephone,100;mobilephone,100;email,320;zipcode,100;address,20;isnormal,60;fax,100;isdelete,60;deletetime,150;id_corp,55;contactid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_suppliercontact</DbTable>
+<Index>contactid='%{mymeal_suppliercontactLst[contactid]}'</Index>
+<Data>contact,supplierid,telephone,mobilephone,email,zipcode,address,isnormal,fax,isdelete,deletetime,id_corp,contactid</Data>
+<Order>contactid</Order></DbDetails>
+<OnClick><assign name="supplierid[supplierid]" expr="%{mymeal_suppliercontactLst[supplierid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

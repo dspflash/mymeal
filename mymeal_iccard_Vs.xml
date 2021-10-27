@@ -1,0 +1,62 @@
+﻿<GroupBox Name="GBDEDITmymeal_iccard"><Ctrls>
+<GroupBox Name="GB_memberid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_memberid" Size="60,20" Text="memberid" Align="Right"  onload="init"/>
+<ComboBox Name="memberid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_memberid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_member</DbTable>
+<Index>memberid</Index>
+<Data>Name,MemberID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_iccardtype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_iccardtype" Size="60,20" Text="iccardtype" Align="Right"  onload="init"/>
+<ComboBox Name="iccardtype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_iccardtype"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumkey</Index>
+<Data>EnumValue,EnumKey</Data>
+<Where>enumtype='card_type'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Text="" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ispassword" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ispassword" Size="230,20" Text="ispassword" ToolTip="ttp_ispassword"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_password" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_password" Size="60,20" Text="password" Align="Right"/>
+<TextBox Name="password" Size="170,20" Text="" Weight="170" ToolTip="ttp_password"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_issuedate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_issuedate" Size="60,20" Text="issuedate" Align="Right"/>
+<DateTime Name="issuedate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_issuedate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isvalidatecontrol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvalidatecontrol" Size="230,20" Text="isvalidatecontrol" ToolTip="ttp_isvalidatecontrol"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_validate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_validate" Size="60,20" Text="validate" Align="Right"/>
+<DateTime Name="validate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_validate"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Text="" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_iccardid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_iccardid" Size="60,20" Text="iccardid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="iccardid" Size="170,20" Text="" Weight="170" ToolTip="ttp_iccardid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{iccardid}'"><SetVisible name="insertmymeal_iccard" Visible="0"/><SetVisible name="modifymymeal_iccard" Visible="1"/><else/><SetVisible name="insertmymeal_iccard" Visible="1"/><SetVisible name="modifymymeal_iccard" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

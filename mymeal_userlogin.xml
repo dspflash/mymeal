@@ -1,0 +1,93 @@
+<WndTap Name="mymeal_userlogin" Text="mymeal_userlogin" Ver="2">
+<xi:include href="lan\mymeal_userlogin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_userlogin" id="mymeal_userlogin" Text="mymeal_userlogin" Size="100,100"><Ctrls>
+<GroupBox Name="GB_loginname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_loginname" Size="60,20" Text="loginname" Align="Right"/>
+<TextBox Name="loginname" Size="170,20" Weight="170" ToolTip="ttp_loginname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_password" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_password" Size="60,20" Text="password" Align="Right"/>
+<TextBox Name="password" Size="170,20" Weight="170" ToolTip="ttp_password"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_mindiscount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mindiscount" Size="60,20" Text="mindiscount" Align="Right"/>
+<TextBox Name="mindiscount" Size="170,20" Weight="170" ToolTip="ttp_mindiscount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_signamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_signamount" Size="60,20" Text="signamount" Align="Right"/>
+<TextBox Name="signamount" Size="170,20" Weight="170" ToolTip="ttp_signamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isadmin" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isadmin" Size="230,20" Text="isadmin" ToolTip="ttp_isadmin"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_userloginid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_userloginid" Size="60,20" Text="userloginid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="userloginid" Size="170,20" Weight="170" ToolTip="ttp_userloginid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_userlogin" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_userlogin" Size="50,20" Text="create" ToolTip="ttp_createmymeal_userlogin">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Data>loginname,name,password,mindiscount,signamount,isvoid,isadmin,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_userlogin" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_userlogin" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_userlogin">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Data>loginname,name,password,mindiscount,signamount,isvoid,isadmin,isdelete,deletetime,id_corp</Data>
+<Where>userloginid='%{mymeal_userloginLst[userloginid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_userlogin" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_userlogin" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_userlogin">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Where>userloginid='%{mymeal_userloginLst[userloginid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_userlogin" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_userlogin" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_userlogin">
+			  <OnClick><submit next="mymeal_userloginLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_userloginLst" Size="40,20" Text="firstpage" OnClick="(mymeal_userloginLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_userloginLst" Size="40,20" Text="prepage" OnClick="(mymeal_userloginLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_userloginLst" Size="40,20" Text="nextpage" OnClick="(mymeal_userloginLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_userlogin" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_userloginLst" ToolTip="ttp_mymeal_userlogin" Size="700,420" PageSize="10" loadedclick="0" Heading="loginname,100;name,100;password,100;mindiscount,20;signamount,90;isvoid,60;isadmin,60;isdelete,60;deletetime,150;id_corp,55;userloginid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Index>userloginid='%{mymeal_userloginLst[userloginid]}'</Index>
+<Data>loginname,name,password,mindiscount,signamount,isvoid,isadmin,isdelete,deletetime,id_corp,userloginid</Data>
+<Order>userloginid</Order></DbDetails></ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

@@ -1,0 +1,169 @@
+<WndTap Name="mymeal_reserve" Text="mymeal_reserve" Ver="2">
+<xi:include href="lan\mymeal_reserve.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_reserve" id="mymeal_reserve" Text="mymeal_reserve" Size="100,100"><Ctrls>
+<GroupBox Name="GB_docno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docno" Size="60,20" Text="docno" Align="Right"/>
+<TextBox Name="docno" Size="170,20" Weight="170" ToolTip="ttp_docno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_entrytypeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_entrytypeid" Size="60,20" Text="entrytypeid" Align="Right" OnLoad="init"/>
+<ComboBox Name="entrytypeid" Size="170,100" Weight="170"  ToolTip="ttp_entrytypeid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Data>Name,EntryTypeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_docdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docdate" Size="60,20" Text="docdate" Align="Right"/>
+<DateTime Name="docdate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_docdate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_timeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_timeid" Size="60,20" Text="timeid" Align="Right" OnLoad="init"/>
+<ComboBox Name="timeid" Size="170,100" Weight="170"  ToolTip="ttp_timeid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_businesstime</DbTable>
+<Data>Name,TimeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_memberid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_memberid" Size="60,20" Text="memberid" Align="Right" OnLoad="init"/>
+<ComboBox Name="memberid" Size="170,100" Weight="170"  ToolTip="ttp_memberid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_member</DbTable>
+<Data>Name,MemberID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reservestatus" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reservestatus" Size="60,20" Text="reservestatus" Align="Right" OnLoad="init"/>
+<ComboBox Name="reservestatus" Size="170,100" Weight="170"  ToolTip="ttp_reservestatus" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Data>EnumValue,EnumKey</Data>
+<Where>enumtype='reserve_status'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_customername" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_customername" Size="60,20" Text="customername" Align="Right"/>
+<TextBox Name="customername" Size="170,20" Weight="170" ToolTip="ttp_customername"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_mobilephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_mobilephone" Size="60,20" Text="mobilephone" Align="Right"/>
+<TextBox Name="mobilephone" Size="140,20" Weight="140" ToolTip="ttp_mobilephone"></TextBox>
+<MagicCtrl Name="dialmobilephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{mobilephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="140,20" Weight="140" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_guestunit" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_guestunit" Size="60,20" Text="guestunit" Align="Right"/>
+<TextBox Name="guestunit" Size="170,20" Weight="170" ToolTip="ttp_guestunit"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reservetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reservetime" Size="60,20" Text="reservetime" Align="Right"/>
+<DateTime Name="reservetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_reservetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_canceltime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_canceltime" Size="60,20" Text="canceltime" Align="Right"/>
+<DateTime Name="canceltime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_canceltime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_depositamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_depositamount" Size="60,20" Text="depositamount" Align="Right"/>
+<TextBox Name="depositamount" Size="170,20" Weight="170" ToolTip="ttp_depositamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_persons" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_persons" Size="60,20" Text="persons" Align="Right"/>
+<TextBox Name="persons" Size="170,20" Weight="170" ToolTip="ttp_persons"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tables" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_tables" Size="60,20" Text="tables" Align="Right"/>
+<TextBox Name="tables" Size="170,20" Weight="170" ToolTip="ttp_tables"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_note" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_note" Size="60,20" Text="note" Align="Right"/>
+<TextBox Name="note" Size="170,20" Weight="170" ToolTip="ttp_note"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isautocancel" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocancel" Size="230,20" Text="isautocancel" ToolTip="ttp_isautocancel"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_operatorid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_operatorid" Size="60,20" Text="operatorid" Align="Right"/>
+<TextBox Name="operatorid" Size="170,20" Weight="170" ToolTip="ttp_operatorid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isreservetable" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isreservetable" Size="230,20" Text="isreservetable" ToolTip="ttp_isreservetable"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_dataversion" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_dataversion" Size="60,20" Text="dataversion" Align="Right"/>
+<TextBox Name="dataversion" Size="170,20" Weight="170" ToolTip="ttp_dataversion"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reserveid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reserveid" Size="60,20" Text="reserveid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="reserveid" Size="170,20" Weight="170" ToolTip="ttp_reserveid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_reserve" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_reserve" Size="50,20" Text="create" ToolTip="ttp_createmymeal_reserve">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Data>docno,entrytypeid[entrytypeid],docdate,timeid[timeid],memberid[memberid],reservestatus[enumkey],customername,mobilephone,telephone,guestunit,reservetime,canceltime,depositamount,persons,tables,note,isautocancel,operatorid,isdelete,deletetime,isreservetable,dataversion,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserve" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_reserve" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_reserve">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Data>docno,entrytypeid[entrytypeid],docdate,timeid[timeid],memberid[memberid],reservestatus[enumkey],customername,mobilephone,telephone,guestunit,reservetime,canceltime,depositamount,persons,tables,note,isautocancel,operatorid,isdelete,deletetime,isreservetable,dataversion,id_corp</Data>
+<Where>reserveid='%{mymeal_reserveLst[reserveid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserve" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_reserve" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_reserve">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Where>reserveid='%{mymeal_reserveLst[reserveid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_reserve" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_reserve" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_reserve">
+			  <OnClick><submit next="mymeal_reserveLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_reserveLst" Size="40,20" Text="firstpage" OnClick="(mymeal_reserveLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_reserveLst" Size="40,20" Text="prepage" OnClick="(mymeal_reserveLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_reserveLst" Size="40,20" Text="nextpage" OnClick="(mymeal_reserveLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_reserve" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_reserveLst" ToolTip="ttp_mymeal_reserve" Size="700,420" PageSize="10" loadedclick="0" Heading="docno,100;entrytypeid,120;docdate,150;timeid,120;memberid,120;reservestatus,120;customername,320;mobilephone,100;telephone,100;guestunit,500;reservetime,150;canceltime,150;depositamount,90;persons,55;tables,55;note,20;isautocancel,60;operatorid,55;isdelete,60;deletetime,150;isreservetable,60;dataversion,40;id_corp,55;reserveid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_reserve</DbTable>
+<Index>reserveid='%{mymeal_reserveLst[reserveid]}'</Index>
+<Data>docno,entrytypeid,docdate,timeid,memberid,reservestatus,customername,mobilephone,telephone,guestunit,reservetime,canceltime,depositamount,persons,tables,note,isautocancel,operatorid,isdelete,deletetime,isreservetable,dataversion,id_corp,reserveid</Data>
+<Order>reserveid</Order></DbDetails>
+<OnClick><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_reserveLst[entrytypeid]}" function="SetSel"/><assign name="timeid[timeid]" expr="%{mymeal_reserveLst[timeid]}" function="SetSel"/><assign name="memberid[memberid]" expr="%{mymeal_reserveLst[memberid]}" function="SetSel"/><assign name="reservestatus[enumkey]" expr="%{mymeal_reserveLst[reservestatus]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

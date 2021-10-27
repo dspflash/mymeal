@@ -1,0 +1,64 @@
+<WndTap Name="mymeal_productassemble" Text="mymeal_productassemble" Ver="2">
+<xi:include href="lan\mymeal_productassemble.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_productassemble" id="mymeal_productassemble" Text="mymeal_productassemble" Size="100,100"><Ctrls>
+<GroupBox Name="GB_assembleproductid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_assembleproductid" Size="60,20" Text="assembleproductid" Align="Right"/>
+<ComboBox Name="assembleproductid" Size="140,100" Weight="140"  ToolTip="ttp_assembleproductid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_product</DbTable><Data>Name,ProductID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_productid" Size="60,20" Text="productid" Align="Right"/>
+<ComboBox Name="productid" Size="140,100" Weight="140"  ToolTip="ttp_productid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_product</DbTable><Data>Name,ProductID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><GroupBox Name="GB_unitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_unitid" Size="60,20" Text="unitid" Align="Right"/>
+<ComboBox Name="unitid" Size="140,100" Weight="140"  ToolTip="ttp_unitid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_unit</DbTable><Data>Name,UnitID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="140,20" Weight="140" ToolTip="ttp_price"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="140,20" Weight="140" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="140,20" Weight="140" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="140,20" Weight="140" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_assembleid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_assembleid" Size="60,20" Text="assembleid" Align="Right"/>
+<TextBox Name="assembleid" Size="140,20" Weight="140" ToolTip="ttp_assembleid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="140,20" Weight="140" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_isneeded" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isneeded" Size="200,20" Text="isneeded" ToolTip="ttp_isneeded"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_orderno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="orderno" Size="200,20" Text="orderno" ToolTip="ttp_orderno"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isdelete" Size="200,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_productassemble" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_productassemble" Size="50,20" Text="create" ToolTip="ttp_insertmymeal_productassemble">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productassemble</DbTable><Data>assembleproductid[productid],productid[productid],unitid[unitid],price,quantity,amount,id_corp,deletetime,isneeded,orderno,isdelete</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productassemble" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_productassemble" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_productassemble">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productassemble</DbTable><Data>assembleproductid[productid],productid[productid],unitid[unitid],price,quantity,amount,id_corp,deletetime,isneeded,orderno,isdelete</Data><Where>assembleid='%{mymeal_productassembleLst[assembleid]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productassemble" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_productassemble" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_productassemble">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productassemble</DbTable><Where>assembleid='%{mymeal_productassembleLst[assembleid]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productassemble" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_productassemble" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_productassemble">
+			  <OnClick><submit next="mymeal_productassembleLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_productassembleLst" Size="40,20" Text="firstpage" OnClick="(mymeal_productassembleLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_productassembleLst" Size="40,20" Text="prepage" OnClick="(mymeal_productassembleLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_productassembleLst" Size="40,20" Text="nextpage" OnClick="(mymeal_productassembleLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_productassemble" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_productassembleLst" ToolTip="ttp_mymeal_productassemble" Size="700,420" PageSize="10" loadedclick="0" Heading="assembleproductid,120;productid,120;unitid,120;price,90;quantity,90;amount,90;id_corp,55;assembleid,55;deletetime,150;isneeded,60;orderno,60;isdelete,60;" onload="init">
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productassemble</DbTable><Index>assembleid='%{mymeal_productassembleLst[assembleid]}'</Index><Data>assembleproductid,productid,unitid,price,quantity,amount,id_corp,assembleid,deletetime,isneeded,orderno,isdelete</Data><Order>assembleid</Order></DbDetails>
+<OnClick><assign name="assembleproductid[productid]" expr="%{mymeal_productassembleLst[assembleproductid]}" function="SetSel"/><assign name="productid[productid]" expr="%{mymeal_productassembleLst[productid]}" function="SetSel"/><assign name="unitid[unitid]" expr="%{mymeal_productassembleLst[unitid]}" function="SetSel"/></OnClick>
+<DbDetails fcsm="1"><queryFormat>select %{data} from %{dbtable} limit %{StartRow},%{PgSize}</queryFormat></DbDetails></ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

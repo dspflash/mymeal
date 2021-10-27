@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmymeal_iccardbill" Size="100,100"><Ctrls>
+<Button sqlpkinsert="icbillid" Text="create" ToolTip="ttp_createmymeal_iccardbill" Name="insertmymeal_iccardbill" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mymeal.mymeal_iccardbill</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>iccardid[iccardid],memberid[memberid],shiftid[shiftid],docno,entrytypeid[entrytypeid],billid[billid],docdate,amount,incomeamount,notes</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_iccardbillLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_iccardbill" Name="modifymymeal_iccardbill" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mymeal.mymeal_iccardbill</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>iccardid[iccardid],memberid[memberid],shiftid[shiftid],docno,entrytypeid[entrytypeid],billid[billid],docdate,amount,incomeamount,notes</Data>
+<DataEx/>
+<Where>icbillid='%{icbillid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="mymeal_iccardbillLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmymeal_iccardbill" Name="resetmymeal_iccardbill" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmymeal_iccardbill" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_iccardbill" Name="gsearchmymeal_iccardbill" Size="50,20" visible="false">
+	<OnClick>
+	<search next="mymeal_iccardbillLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmymeal_iccardbill" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

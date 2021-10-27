@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_feemethod" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_feemethodLst" ToolTip="ttp_mymeal_feemethod" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_feemethod</DbTable>
+<Index>feemethodid</Index>
+<Data>feename,ismaxfee,maxfee,customerminute,customerfee,ismergefirstandend,subunittimemethod,minutespertimeslice,ishalfhourfree,ishalfhourfee,isoverhalfhour,isdelete,deletetime,feemethodid</Data>
+<Order>feemethodid</Order></DbDetails>
+<OnClick>
+<if cond="%{feemethodid}"><SetVisible name="insertmymeal_feemethod" Visible="0"/><SetVisible name="modifymymeal_feemethod" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

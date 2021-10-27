@@ -1,0 +1,52 @@
+﻿<GroupBox Name="GBDEDITmymeal_feemethod"><Ctrls>
+<GroupBox Name="GB_feename" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_feename" Size="60,20" Text="feename" Align="Right"/>
+<TextBox Name="feename" Size="170,20" Text="" Weight="170" ToolTip="ttp_feename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ismaxfee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismaxfee" Size="230,20" Text="ismaxfee" ToolTip="ttp_ismaxfee"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_maxfee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_maxfee" Size="60,20" Text="maxfee" Align="Right"/>
+<TextBox Name="maxfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_maxfee"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_customerminute" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_customerminute" Size="60,20" Text="customerminute" Align="Right"/>
+<TextBox Name="customerminute" Size="170,20" Text="" Weight="170" ToolTip="ttp_customerminute"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_customerfee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_customerfee" Size="60,20" Text="customerfee" Align="Right"/>
+<TextBox Name="customerfee" Size="170,20" Text="" Weight="170" ToolTip="ttp_customerfee"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ismergefirstandend" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismergefirstandend" Size="230,20" Text="ismergefirstandend" ToolTip="ttp_ismergefirstandend"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_subunittimemethod" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_subunittimemethod" Size="60,20" Text="subunittimemethod" Align="Right"/>
+<TextBox Name="subunittimemethod" Size="170,20" Text="" Weight="170" ToolTip="ttp_subunittimemethod"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_minutespertimeslice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_minutespertimeslice" Size="60,20" Text="minutespertimeslice" Align="Right"/>
+<TextBox Name="minutespertimeslice" Size="170,20" Text="" Weight="170" ToolTip="ttp_minutespertimeslice"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ishalfhourfree" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ishalfhourfree" Size="230,20" Text="ishalfhourfree" ToolTip="ttp_ishalfhourfree"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ishalfhourfee" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ishalfhourfee" Size="230,20" Text="ishalfhourfee" ToolTip="ttp_ishalfhourfee"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isoverhalfhour" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isoverhalfhour" Size="230,20" Text="isoverhalfhour" ToolTip="ttp_isoverhalfhour"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_feemethodid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_feemethodid" Size="60,20" Text="feemethodid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="feemethodid" Size="170,20" Text="" Weight="170" ToolTip="ttp_feemethodid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{feemethodid}'"><SetVisible name="insertmymeal_feemethod" Visible="0"/><SetVisible name="modifymymeal_feemethod" Visible="1"/><else/><SetVisible name="insertmymeal_feemethod" Visible="1"/><SetVisible name="modifymymeal_feemethod" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

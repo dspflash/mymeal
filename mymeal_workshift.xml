@@ -1,0 +1,146 @@
+<WndTap Name="mymeal_workshift" Text="mymeal_workshift" Ver="2">
+<xi:include href="lan\mymeal_workshift.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_workshift" id="mymeal_workshift" Text="mymeal_workshift" Size="100,100"><Ctrls>
+<GroupBox Name="GB_docno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docno" Size="60,20" Text="docno" Align="Right"/>
+<TextBox Name="docno" Size="170,20" Weight="170" ToolTip="ttp_docno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_entrytypeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_entrytypeid" Size="60,20" Text="entrytypeid" Align="Right" OnLoad="init"/>
+<ComboBox Name="entrytypeid" Size="170,100" Weight="170"  ToolTip="ttp_entrytypeid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Data>Name,EntryTypeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_docdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docdate" Size="60,20" Text="docdate" Align="Right"/>
+<DateTime Name="docdate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_docdate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_possiteid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_possiteid" Size="60,20" Text="possiteid" Align="Right" OnLoad="init"/>
+<ComboBox Name="possiteid" Size="170,100" Weight="170"  ToolTip="ttp_possiteid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Data>Name,PosSiteID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_operatorid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_operatorid" Size="60,20" Text="operatorid" Align="Right" OnLoad="init"/>
+<ComboBox Name="operatorid" Size="170,100" Weight="170"  ToolTip="ttp_operatorid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Data>Name,UserLoginID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_acceptid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_acceptid" Size="60,20" Text="acceptid" Align="Right" OnLoad="init"/>
+<ComboBox Name="acceptid" Size="170,100" Weight="170"  ToolTip="ttp_acceptid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Data>Name,UserLoginID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_incomeamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_incomeamount" Size="60,20" Text="incomeamount" Align="Right"/>
+<TextBox Name="incomeamount" Size="170,20" Weight="170" ToolTip="ttp_incomeamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_icsaveamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_icsaveamount" Size="60,20" Text="icsaveamount" Align="Right"/>
+<TextBox Name="icsaveamount" Size="170,20" Weight="170" ToolTip="ttp_icsaveamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_diningamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_diningamount" Size="60,20" Text="diningamount" Align="Right"/>
+<TextBox Name="diningamount" Size="170,20" Weight="170" ToolTip="ttp_diningamount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_discountamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_discountamount" Size="60,20" Text="discountamount" Align="Right"/>
+<TextBox Name="discountamount" Size="170,20" Weight="170" ToolTip="ttp_discountamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_hangupamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_hangupamount" Size="60,20" Text="hangupamount" Align="Right"/>
+<TextBox Name="hangupamount" Size="170,20" Weight="170" ToolTip="ttp_hangupamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_handtime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_handtime" Size="60,20" Text="handtime" Align="Right"/>
+<DateTime Name="handtime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_handtime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_handinamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_handinamount" Size="60,20" Text="handinamount" Align="Right"/>
+<TextBox Name="handinamount" Size="170,20" Weight="170" ToolTip="ttp_handinamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_downamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_downamount" Size="60,20" Text="downamount" Align="Right"/>
+<TextBox Name="downamount" Size="170,20" Weight="170" ToolTip="ttp_downamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_balanceamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_balanceamount" Size="60,20" Text="balanceamount" Align="Right"/>
+<TextBox Name="balanceamount" Size="170,20" Weight="170" ToolTip="ttp_balanceamount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_status" Size="60,20" Text="status" Align="Right" OnLoad="init"/>
+<ComboBox Name="status" Size="170,100" Weight="170" Items="OPEN" ToolTip="ttp_status" SelectedIndex="0" OnLoad="init"></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_shiftid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_shiftid" Size="60,20" Text="shiftid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="shiftid" Size="170,20" Weight="170" ToolTip="ttp_shiftid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_workshift" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_workshift" Size="50,20" Text="create" ToolTip="ttp_createmymeal_workshift">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Data>docno,entrytypeid[entrytypeid],docdate,possiteid[possiteid],operatorid[userloginid],acceptid[userloginid],incomeamount,icsaveamount,diningamount,discountamount,hangupamount,handtime,handinamount,downamount,balanceamount,status,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_workshift" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_workshift" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_workshift">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Data>docno,entrytypeid[entrytypeid],docdate,possiteid[possiteid],operatorid[userloginid],acceptid[userloginid],incomeamount,icsaveamount,diningamount,discountamount,hangupamount,handtime,handinamount,downamount,balanceamount,status,id_corp</Data>
+<Where>shiftid='%{mymeal_workshiftLst[shiftid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_workshift" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_workshift" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_workshift">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Where>shiftid='%{mymeal_workshiftLst[shiftid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_workshift" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_workshift" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_workshift">
+			  <OnClick><submit next="mymeal_workshiftLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_workshiftLst" Size="40,20" Text="firstpage" OnClick="(mymeal_workshiftLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_workshiftLst" Size="40,20" Text="prepage" OnClick="(mymeal_workshiftLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_workshiftLst" Size="40,20" Text="nextpage" OnClick="(mymeal_workshiftLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_workshift" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_workshiftLst" ToolTip="ttp_mymeal_workshift" Size="700,420" PageSize="10" loadedclick="0" Heading="docno,100;entrytypeid,120;docdate,150;possiteid,120;operatorid,120;acceptid,120;incomeamount,90;icsaveamount,90;diningamount,90;discountamount,90;hangupamount,90;handtime,150;handinamount,90;downamount,90;balanceamount,90;status,120;id_corp,55;shiftid,100;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_workshift</DbTable>
+<Index>shiftid='%{mymeal_workshiftLst[shiftid]}'</Index>
+<Data>docno,entrytypeid,docdate,possiteid,operatorid,acceptid,incomeamount,icsaveamount,diningamount,discountamount,hangupamount,handtime,handinamount,downamount,balanceamount,status,id_corp,shiftid</Data>
+<Order>shiftid</Order></DbDetails>
+<OnClick><assign name="entrytypeid[entrytypeid]" expr="%{mymeal_workshiftLst[entrytypeid]}" function="SetSel"/><assign name="possiteid[possiteid]" expr="%{mymeal_workshiftLst[possiteid]}" function="SetSel"/><assign name="operatorid[userloginid]" expr="%{mymeal_workshiftLst[operatorid]}" function="SetSel"/><assign name="acceptid[userloginid]" expr="%{mymeal_workshiftLst[acceptid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

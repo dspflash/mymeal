@@ -1,0 +1,115 @@
+﻿<GroupBox Name="GBDEDITmymeal_income"><Ctrls>
+<GroupBox Name="GB_docno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docno" Size="60,20" Text="docno" Align="Right"/>
+<TextBox Name="docno" Size="170,20" Text="" Weight="170" ToolTip="ttp_docno"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accountid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_accountid" Size="60,20" Text="accountid" Align="Right"  onload="init"/>
+<ComboBox Name="accountid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_accountid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_incomeaccount</DbTable>
+<Index>accountid</Index>
+<Data>Name,AccountID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_methodname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_methodname" Size="60,20" Text="methodname" Align="Right"  onload="init"/>
+<ComboBox Name="methodname" Size="170,100" Text="" Weight="170"  ToolTip="ttp_methodname"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_incomemethod</DbTable>
+<Index>incomemethodid</Index>
+<Data>Name,incomemethodid</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_statusid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_statusid" Size="60,20" Text="statusid" Align="Right"  onload="init"/>
+<ComboBox Name="statusid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_statusid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumkey</Index>
+<Data>EnumValue,EnumKey</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_entrytypeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_entrytypeid" Size="60,20" Text="entrytypeid" Align="Right"  onload="init"/>
+<ComboBox Name="entrytypeid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_entrytypeid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Index>entrytypeid</Index>
+<Data>Name,EntryTypeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_docdate" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_docdate" Size="60,20" Text="docdate" Align="Right"/>
+<DateTime Name="docdate" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_docdate"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_billno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_billno" Size="60,20" Text="billno" Align="Right"/>
+<TextBox Name="billno" Size="170,20" Text="" Weight="170" ToolTip="ttp_billno">
+	<DbDetails>
+<DbTable>mymeal.mymeal_diningbill</DbTable>
+<Index>billid</Index>
+<Data>DocNo,BillID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_departmentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_departmentid" Size="60,20" Text="departmentid" Align="Right"/>
+<TextBox Name="departmentid" Size="170,20" Text="" Weight="170" ToolTip="ttp_departmentid">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Index>departmentid</Index>
+<Data>Name,DepartmentID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_employeeid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_employeeid" Size="60,20" Text="employeeid" Align="Right"/>
+<TextBox Name="employeeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_employeeid">
+	<DbDetails>
+<DbTable>mymeal.mymeal_employee</DbTable>
+<Index>employeeid</Index>
+<Data>Name,EmployeeID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_operatorid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_operatorid" Size="60,20" Text="operatorid" Align="Right"/>
+<TextBox Name="operatorid" Size="170,20" Text="" Weight="170" ToolTip="ttp_operatorid">
+	<DbDetails>
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Index>userloginid</Index>
+<Data>LoginName,UserLoginID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_checkerid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_checkerid" Size="60,20" Text="checkerid" Align="Right"/>
+<TextBox Name="checkerid" Size="170,20" Text="" Weight="170" ToolTip="ttp_checkerid">
+	<DbDetails>
+<DbTable>mymeal.mymeal_userlogin</DbTable>
+<Index>userloginid</Index>
+<Data>LoginName,UserLoginID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Text="" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_incomeid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_incomeid" Size="60,20" Text="incomeid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="incomeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_incomeid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{incomeid}'"><SetVisible name="insertmymeal_income" Visible="0"/><SetVisible name="modifymymeal_income" Visible="1"/><else/><SetVisible name="insertmymeal_income" Visible="1"/><SetVisible name="modifymymeal_income" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

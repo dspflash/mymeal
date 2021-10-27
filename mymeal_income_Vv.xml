@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_income" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_income_vLst" ToolTip="ttp_mymeal_income" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_income m left join mymeal.mymeal_incomeaccount m0 on m.accountid=m0.accountid left join mymeal.mymeal_incomemethod m1 on m.methodname=m1.incomemethodid left join mymeal.mymeal_enum m2 on m.statusid=m2.enumkey left join mymeal.mymeal_entrytype m3 on m.entrytypeid=m3.entrytypeid left join mymeal.mymeal_diningbill m4 on m.billno=m4.billid left join mymeal.mymeal_department m5 on m.departmentid=m5.departmentid left join mymeal.mymeal_employee m6 on m.employeeid=m6.employeeid left join mymeal.mymeal_userlogin m7 on m.operatorid=m7.userloginid left join mymeal.mymeal_userlogin m8 on m.checkerid=m8.userloginid</DbTable>
+<Index>incomeid</Index>
+<Data>m.docno,m0.Name accountid,m1.Name methodname,m2.EnumValue statusid,m3.Name entrytypeid,m.docdate,m4.DocNo billno,m5.Name departmentid,m6.Name employeeid,m7.LoginName operatorid,m8.LoginName checkerid,m.notes,m.isdelete,m.deletetime,m.incomeid</Data>
+<Order>incomeid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>incomeid='%{mymeal_income_vLst[incomeid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_income.mymeal_incomeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_income</DbTable>
+<Where>incomeid='%{mymeal_income_vLst[incomeid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,41 @@
+﻿<GroupBox Name="GBDEDITmymeal_discount"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_productid"><Ctrls>
+<Label Align="Right" Text="productid" onload="init" Name="lb_productid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_productid" onload="init" Name="productid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Index>productid</Index>
+<Data>Name,ProductID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discounttype"><Ctrls>
+<Label Align="Right" Text="discounttype" onload="init" Name="lb_discounttype" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_discounttype" onload="init" Name="discounttype" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index>enumkey</Index>
+<Data>EnumValue,EnumKey</Data>
+<Where>enumtype='discount_type'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discount"><Ctrls>
+<Label Align="Right" Text="discount" Name="lb_discount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_discount" Name="discount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discountprice"><Ctrls>
+<Label Align="Right" Text="discountprice" Name="lb_discountprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_discountprice" Name="discountprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_isdelete" Visible="false"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" overlap="pre" Name="isdelete" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_deletetime" Visible="false"><Ctrls>
+<Label Align="Right" Text="deletetime" overlap="pre" Name="lb_deletetime" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" overlap="pre" Name="deletetime" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_rankid" Visible="false"><Ctrls>
+<Label Align="Right" Text="rankid" overlap="pre" Name="lb_rankid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rankid" overlap="pre" Name="rankid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{rankid}'"><SetVisible name="insertmymeal_discount" Visible="0"/><SetVisible name="modifymymeal_discount" Visible="1"/><else/><SetVisible name="insertmymeal_discount" Visible="1"/><SetVisible name="modifymymeal_discount" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

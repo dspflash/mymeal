@@ -1,0 +1,107 @@
+<WndTap Name="mymeal_unit" Text="mymeal_unit" Ver="2">
+<xi:include href="lan\mymeal_unit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_unit" id="mymeal_unit" Text="mymeal_unit" Size="100,100"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_productid" Size="60,20" Text="productid" Align="Right" OnLoad="init"/>
+<ComboBox Name="productid" Size="170,100" Weight="170"  ToolTip="ttp_productid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Data>Name,ProductID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_factor" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_factor" Size="60,20" Text="factor" Align="Right"/>
+<TextBox Name="factor" Size="170,20" Weight="170" ToolTip="ttp_factor"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_purchaseprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_purchaseprice" Size="60,20" Text="purchaseprice" Align="Right"/>
+<TextBox Name="purchaseprice" Size="170,20" Weight="170" ToolTip="ttp_purchaseprice"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_retailprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_retailprice" Size="60,20" Text="retailprice" Align="Right"/>
+<TextBox Name="retailprice" Size="170,20" Weight="170" ToolTip="ttp_retailprice"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdefault" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdefault" Size="230,20" Text="isdefault" ToolTip="ttp_isdefault"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_ismin" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="ismin" Size="230,20" Text="ismin" ToolTip="ttp_ismin"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isvoid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isvoid" Size="230,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_orderno" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_orderno" Size="60,20" Text="orderno" Align="Right"/>
+<TextBox Name="orderno" Size="170,20" Weight="170" ToolTip="ttp_orderno"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_unitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_unitid" Size="60,20" Text="unitid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="unitid" Size="170,20" Weight="170" ToolTip="ttp_unitid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_unit" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_unit" Size="50,20" Text="create" ToolTip="ttp_createmymeal_unit">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Data>name,productid[productid],factor,purchaseprice,retailprice,isdefault,ismin,isvoid,orderno,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_unit" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_unit" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_unit">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Data>name,productid[productid],factor,purchaseprice,retailprice,isdefault,ismin,isvoid,orderno,isdelete,deletetime,id_corp</Data>
+<Where>unitid='%{mymeal_unitLst[unitid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_unit" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_unit" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_unit">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Where>unitid='%{mymeal_unitLst[unitid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_unit" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_unit" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_unit">
+			  <OnClick><submit next="mymeal_unitLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_unitLst" Size="40,20" Text="firstpage" OnClick="(mymeal_unitLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_unitLst" Size="40,20" Text="prepage" OnClick="(mymeal_unitLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_unitLst" Size="40,20" Text="nextpage" OnClick="(mymeal_unitLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_unit" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_unitLst" ToolTip="ttp_mymeal_unit" Size="700,420" PageSize="10" loadedclick="0" Heading="name,200;productid,120;factor,55;purchaseprice,90;retailprice,90;isdefault,60;ismin,60;isvoid,60;orderno,55;isdelete,60;deletetime,150;id_corp,55;unitid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Index>unitid='%{mymeal_unitLst[unitid]}'</Index>
+<Data>name,productid,factor,purchaseprice,retailprice,isdefault,ismin,isvoid,orderno,isdelete,deletetime,id_corp,unitid</Data>
+<Order>unitid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" expr="%{mymeal_unitLst[productid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

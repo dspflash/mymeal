@@ -1,0 +1,25 @@
+﻿<GroupBox Name="GBDEDITmymeal_businesstime"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_starttime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_starttime" Size="60,20" Text="starttime" Align="Right"/>
+<DateTime Name="starttime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_starttime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_endtime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_endtime" Size="60,20" Text="endtime" Align="Right"/>
+<DateTime Name="endtime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_endtime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_displayorder" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_displayorder" Size="60,20" Text="displayorder" Align="Right"/>
+<TextBox Name="displayorder" Size="170,20" Text="" Weight="170" ToolTip="ttp_displayorder"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_timeid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_timeid" Size="60,20" Text="timeid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="timeid" Size="170,20" Text="" Weight="170" ToolTip="ttp_timeid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{timeid}'"><SetVisible name="insertmymeal_businesstime" Visible="0"/><SetVisible name="modifymymeal_businesstime" Visible="1"/><else/><SetVisible name="insertmymeal_businesstime" Visible="1"/><SetVisible name="modifymymeal_businesstime" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

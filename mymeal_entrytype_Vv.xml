@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVmymeal_entrytype" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_entrytype_vLst" ToolTip="ttp_mymeal_entrytype" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>mymeal.mymeal_entrytype m</DbTable>
+<Index>entrytypeid</Index>
+<Data>m.nameeng,m.name,m.prefix,m.entityname,m.costcalcorder,m.entrytypeid</Data>
+<Order>entrytypeid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>entrytypeid='%{mymeal_entrytype_vLst[entrytypeid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.mymeal_entrytype.mymeal_entrytypeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_entrytype</DbTable>
+<Where>entrytypeid='%{mymeal_entrytype_vLst[entrytypeid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

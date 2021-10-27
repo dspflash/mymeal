@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_diningbill"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_mymeal_diningbill" Name="mymeal_diningbillLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_diningbill m left join mymeal.mymeal_diningtable m0 on m.tableid=m0.tableid left join mymeal.mymeal_reserve m1 on m.reserveid=m1.reserveid left join mymeal.mymeal_enum m2 on m.statusid=m2.enumid left join mymeal.mymeal_member m3 on m.memberid=m3.memberid left join mymeal.mymeal_entrytype m4 on m.entrytypeid=m4.entrytypeid left join mymeal.mymeal_department m5 on m.departmentid=m5.departmentid left join mymeal.mymeal_workshift m6 on m.shiftid=m6.shiftid left join mymeal.mymeal_possite m7 on m.possiteid=m7.possiteid left join mymeal.mymeal_employee m8 on m.waiterid=m8.employeeid left join mymeal.mymeal_feemethod m9 on m.feemethodid=m9.feemethodid left join mymeal.mymeal_employee m10 on m.discountoperatorid=m10.employeeid left join mymeal.mymeal_employee m11 on m.operatorid=m11.employeeid left join mymeal.mymeal_businesstime m12 on m.timeid=m12.timeid left join mymeal.mymeal_diningbill m13 on m.masterbillid=m13.billid</DbTable>
+<Index>billid</Index>
+<Data>m0.Name tableid,m.docno,m.persons,m1.CustomerName reserveid,m2.EnumValue statusid,m3.Name memberid,m.iccardid,m4.Name entrytypeid,m.docdate,m.diningdate,m.checkoutdate,m5.Name departmentid,m6.DocNo shiftid,m7.Name possiteid,m.stockid,m8.Name waiterid,m.expendamount,m.feeamount,m9.FeeName feemethodid,m10.Name discountoperatorid,m.discountamount,m.alldiscountamount,m.payableamount,m.returnamount,m.payamount,m.coinsamount,m.discountnotes,m.printqty,m.billnotes,m.checkoutnotes,m11.Name operatorid,m12.Name timeid,m.ismasterbill,m13.DocNo masterbillid,m.diningserial,m.dataversion,m.isinvoice,m.isdelete,m.deletetime,m.billid</Data>
+<Order>billid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>billid='%{mymeal_diningbill_vLst[billid]}'</Where></DbDetails><submit next="$this.mymeal_diningbill.mymeal_diningbillLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mymeal.mymeal_diningbill</DbTable>
+<Where>billid='%{mymeal_diningbill_vLst[billid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

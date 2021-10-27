@@ -1,0 +1,122 @@
+<WndTap Name="mymeal_possite" Text="mymeal_possite" Ver="2">
+<xi:include href="lan\mymeal_possite.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_possite" id="mymeal_possite" Text="mymeal_possite" Size="100,100"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_departmentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_departmentid" Size="60,20" Text="departmentid" Align="Right" OnLoad="init"/>
+<ComboBox Name="departmentid" Size="170,100" Weight="170"  ToolTip="ttp_departmentid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Data>Name,DepartmentID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_stockid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_stockid" Size="60,20" Text="stockid" Align="Right" OnLoad="init"/>
+<ComboBox Name="stockid" Size="170,100" Weight="170"  ToolTip="ttp_stockid" SelectedIndex="0" OnLoad="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_stock</DbTable>
+<Data>Name,StockID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isalltabletype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isalltabletype" Size="230,20" Text="isalltabletype" ToolTip="ttp_isalltabletype"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deviceid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_deviceid" Size="60,20" Text="deviceid" Align="Right"/>
+<TextBox Name="deviceid" Size="170,20" Weight="170" ToolTip="ttp_deviceid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_devicename" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_devicename" Size="60,20" Text="devicename" Align="Right"/>
+<TextBox Name="devicename" Size="170,20" Weight="170" ToolTip="ttp_devicename"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_devicetype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_devicetype" Size="60,20" Text="devicetype" Align="Right"/>
+<TextBox Name="devicetype" Size="170,20" Weight="170" ToolTip="ttp_devicetype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_createtime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_createtime" Size="60,20" Text="createtime" Align="Right"/>
+<DateTime Name="createtime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_createtime"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_lastlogintime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_lastlogintime" Size="60,20" Text="lastlogintime" Align="Right"/>
+<DateTime Name="lastlogintime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Weight="170" ToolTip="ttp_lastlogintime"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="170,20" Weight="170" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_possiteid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_possiteid" Size="60,20" Text="possiteid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="possiteid" Size="170,20" Weight="170" ToolTip="ttp_possiteid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_possite" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_possite" Size="50,20" Text="create" ToolTip="ttp_createmymeal_possite">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Data>name,code,departmentid[departmentid],stockid[stockid],notes,isalltabletype,isdelete,deletetime,deviceid,devicename,devicetype,createtime,lastlogintime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_possite" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_possite" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_possite">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Data>name,code,departmentid[departmentid],stockid[stockid],notes,isalltabletype,isdelete,deletetime,deviceid,devicename,devicetype,createtime,lastlogintime,id_corp</Data>
+<Where>possiteid='%{mymeal_possiteLst[possiteid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_possite" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_possite" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_possite">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Where>possiteid='%{mymeal_possiteLst[possiteid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_possite" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_possite" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_possite">
+			  <OnClick><submit next="mymeal_possiteLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_possiteLst" Size="40,20" Text="firstpage" OnClick="(mymeal_possiteLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_possiteLst" Size="40,20" Text="prepage" OnClick="(mymeal_possiteLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_possiteLst" Size="40,20" Text="nextpage" OnClick="(mymeal_possiteLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_possite" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_possiteLst" ToolTip="ttp_mymeal_possite" Size="700,420" PageSize="10" loadedclick="0" Heading="name,160;code,320;departmentid,120;stockid,120;notes,20;isalltabletype,60;isdelete,60;deletetime,150;deviceid,20;devicename,20;devicetype,160;createtime,150;lastlogintime,150;id_corp,55;possiteid,55;">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_possite</DbTable>
+<Index>possiteid='%{mymeal_possiteLst[possiteid]}'</Index>
+<Data>name,code,departmentid,stockid,notes,isalltabletype,isdelete,deletetime,deviceid,devicename,devicetype,createtime,lastlogintime,id_corp,possiteid</Data>
+<Order>possiteid</Order></DbDetails>
+<OnClick><assign name="departmentid[departmentid]" expr="%{mymeal_possiteLst[departmentid]}" function="SetSel"/><assign name="stockid[stockid]" expr="%{mymeal_possiteLst[stockid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

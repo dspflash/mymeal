@@ -1,0 +1,30 @@
+<Language name="mymeal_businesstime">
+<Lang name="mymeal_businesstime" value="营业时段"/>
+<Lang name="name" value=""/>
+<Lang name="ttp_name" value=""/>
+<Lang name="starttime" value=""/>
+<Lang name="ttp_starttime" value=""/>
+<Lang name="endtime" value=""/>
+<Lang name="ttp_endtime" value=""/>
+<Lang name="displayorder" value=""/>
+<Lang name="ttp_displayorder" value=""/>
+<Lang name="isdelete" value=""/>
+<Lang name="ttp_isdelete" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="timeid" value=""/>
+<Lang name="ttp_timeid" value=""/>
+<Lang name="ttp_operationmymeal_businesstime" value="操作"/>
+<Lang name="ttp_createmymeal_businesstime" value="新增"/>
+<Lang name="ttp_modifymymeal_businesstime" value="修改"/>
+<Lang name="ttp_deletemymeal_businesstime" value="删除"/>
+<Lang name="ttp_refreshmymeal_businesstime" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="刷新"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

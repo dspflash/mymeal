@@ -1,0 +1,52 @@
+﻿<GroupBox Name="GBDEDITmymeal_feemethod"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_feename"><Ctrls>
+<Label Align="Right" Text="feename" Name="lb_feename" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_feename" Name="feename" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ismaxfee"><Ctrls>
+<CheckBox Text="ismaxfee" ToolTip="ttp_ismaxfee" Name="ismaxfee" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_maxfee"><Ctrls>
+<Label Align="Right" Text="maxfee" Name="lb_maxfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_maxfee" Name="maxfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_customerminute"><Ctrls>
+<Label Align="Right" Text="customerminute" Name="lb_customerminute" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_customerminute" Name="customerminute" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_customerfee"><Ctrls>
+<Label Align="Right" Text="customerfee" Name="lb_customerfee" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_customerfee" Name="customerfee" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ismergefirstandend"><Ctrls>
+<CheckBox Text="ismergefirstandend" ToolTip="ttp_ismergefirstandend" Name="ismergefirstandend" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_subunittimemethod"><Ctrls>
+<Label Align="Right" Text="subunittimemethod" Name="lb_subunittimemethod" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_subunittimemethod" Name="subunittimemethod" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_minutespertimeslice"><Ctrls>
+<Label Align="Right" Text="minutespertimeslice" Name="lb_minutespertimeslice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_minutespertimeslice" Name="minutespertimeslice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ishalfhourfree"><Ctrls>
+<CheckBox Text="ishalfhourfree" ToolTip="ttp_ishalfhourfree" Name="ishalfhourfree" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ishalfhourfee"><Ctrls>
+<CheckBox Text="ishalfhourfee" ToolTip="ttp_ishalfhourfee" Name="ishalfhourfee" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isoverhalfhour"><Ctrls>
+<CheckBox Text="isoverhalfhour" ToolTip="ttp_isoverhalfhour" Name="isoverhalfhour" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_isdelete" Visible="false"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" overlap="pre" Name="isdelete" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_deletetime" Visible="false"><Ctrls>
+<Label Align="Right" Text="deletetime" overlap="pre" Name="lb_deletetime" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" overlap="pre" Name="deletetime" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_feemethodid" Visible="false"><Ctrls>
+<Label Align="Right" Text="feemethodid" overlap="pre" Name="lb_feemethodid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_feemethodid" overlap="pre" Name="feemethodid" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{feemethodid}'"><SetVisible name="insertmymeal_feemethod" Visible="0"/><SetVisible name="modifymymeal_feemethod" Visible="1"/><else/><SetVisible name="insertmymeal_feemethod" Visible="1"/><SetVisible name="modifymymeal_feemethod" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

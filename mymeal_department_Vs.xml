@@ -1,0 +1,42 @@
+﻿<GroupBox Name="GBDEDITmymeal_department"><Ctrls>
+<GroupBox Name="GB_departmenttype" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_departmenttype" Size="60,20" Text="departmenttype" Align="Right"/>
+<ComboBox Name="departmenttype" Size="170,100" Text="" Weight="170" Items="NORMAL_DPT" ToolTip="ttp_departmenttype"></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isautocode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="isautocode" Size="230,20" Text="isautocode" ToolTip="ttp_isautocode"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_code" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_code" Size="60,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="170,20" Text="" Weight="170" ToolTip="ttp_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_parentid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_parentid" Size="60,20" Text="parentid" Align="Right"  onload="init"/>
+<ComboBox Name="parentid" Size="170,100" Text="" Weight="170"  ToolTip="ttp_parentid"  onload="init">
+	<DbDetails>
+<DbTable>mymeal.mymeal_department</DbTable>
+<Index></Index>
+<Data>Name,DepartmentID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_notes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_notes" Size="60,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="170,20" Text="" Weight="170" ToolTip="ttp_notes"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="isdelete" Size="230,20" Text="isdelete" ToolTip="ttp_isdelete" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_deletetime" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_departmentid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_departmentid" Size="60,20" Text="departmentid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="departmentid" Size="170,20" Text="" Weight="170" ToolTip="ttp_departmentid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{departmentid}'"><SetVisible name="insertmymeal_department" Visible="0"/><SetVisible name="modifymymeal_department" Visible="1"/><else/><SetVisible name="insertmymeal_department" Visible="1"/><SetVisible name="modifymymeal_department" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

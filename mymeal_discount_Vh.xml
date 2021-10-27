@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVmymeal_discount" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="mymeal_discountLst" ToolTip="ttp_mymeal_discount" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_discount</DbTable>
+<Index>rankid</Index>
+<Data>productid,discounttype,discount,discountprice,isdelete,deletetime,rankid</Data>
+<Order>rankid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" expr="%{mymeal_discountLst[productid]}" function="SetSel"/><assign name="discounttype[enumkey]" expr="%{mymeal_discountLst[discounttype]}" function="SetSel"/>
+<if cond="%{rankid}"><SetVisible name="insertmymeal_discount" Visible="0"/><SetVisible name="modifymymeal_discount" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

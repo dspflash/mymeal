@@ -1,0 +1,60 @@
+<WndTap Name="mymeal_productbom" Text="mymeal_productbom" Ver="2">
+<xi:include href="lan\mymeal_productbom.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_productbom" id="mymeal_productbom" Text="mymeal_productbom" Size="100,100"><Ctrls>
+<GroupBox Name="GB_bomproductid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_bomproductid" Size="60,20" Text="bomproductid" Align="Right"/>
+<ComboBox Name="bomproductid" Size="140,100" Weight="140"  ToolTip="ttp_bomproductid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_product</DbTable><Data>Name,ProductID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_productid" Size="60,20" Text="productid" Align="Right"/>
+<ComboBox Name="productid" Size="140,100" Weight="140"  ToolTip="ttp_productid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_product</DbTable><Data>Name,ProductID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><GroupBox Name="GB_unitid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_unitid" Size="60,20" Text="unitid" Align="Right"/>
+<ComboBox Name="unitid" Size="140,100" Weight="140"  ToolTip="ttp_unitid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_unit</DbTable><Data>Name,UnitID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="140,20" Weight="140" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_stdprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_stdprice" Size="60,20" Text="stdprice" Align="Right"/>
+<TextBox Name="stdprice" Size="140,20" Weight="140" ToolTip="ttp_stdprice"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="140,20" Weight="140" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="140,20" Weight="140" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_bomid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_bomid" Size="60,20" Text="bomid" Align="Right"/>
+<TextBox Name="bomid" Size="140,20" Weight="140" ToolTip="ttp_bomid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isdelete" Size="200,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_productbom" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_productbom" Size="50,20" Text="create" ToolTip="ttp_insertmymeal_productbom">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productbom</DbTable><Data>bomproductid[productid],productid[productid],unitid[unitid],quantity,stdprice,deletetime,id_corp,isdelete</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productbom" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_productbom" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_productbom">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productbom</DbTable><Data>bomproductid[productid],productid[productid],unitid[unitid],quantity,stdprice,deletetime,id_corp,isdelete</Data><Where>bomid='%{mymeal_productbomLst[bomid]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productbom" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_productbom" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_productbom">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productbom</DbTable><Where>bomid='%{mymeal_productbomLst[bomid]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_productbom" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_productbom" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_productbom">
+			  <OnClick><submit next="mymeal_productbomLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_productbomLst" Size="40,20" Text="firstpage" OnClick="(mymeal_productbomLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_productbomLst" Size="40,20" Text="prepage" OnClick="(mymeal_productbomLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_productbomLst" Size="40,20" Text="nextpage" OnClick="(mymeal_productbomLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_productbom" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_productbomLst" ToolTip="ttp_mymeal_productbom" Size="700,420" PageSize="10" loadedclick="0" Heading="bomproductid,120;productid,120;unitid,120;quantity,90;stdprice,90;deletetime,150;id_corp,55;bomid,55;isdelete,60;" onload="init">
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_productbom</DbTable><Index>bomid='%{mymeal_productbomLst[bomid]}'</Index><Data>bomproductid,productid,unitid,quantity,stdprice,deletetime,id_corp,bomid,isdelete</Data><Order>bomid</Order></DbDetails>
+<OnClick><assign name="bomproductid[productid]" expr="%{mymeal_productbomLst[bomproductid]}" function="SetSel"/><assign name="productid[productid]" expr="%{mymeal_productbomLst[productid]}" function="SetSel"/><assign name="unitid[unitid]" expr="%{mymeal_productbomLst[unitid]}" function="SetSel"/></OnClick>
+<DbDetails fcsm="1"><queryFormat>select %{data} from %{dbtable} limit %{StartRow},%{PgSize}</queryFormat></DbDetails></ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

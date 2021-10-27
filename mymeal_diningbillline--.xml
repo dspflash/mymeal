@@ -1,0 +1,96 @@
+<WndTap Name="mymeal_diningbillline" Text="mymeal_diningbillline" Ver="2">
+<xi:include href="lan\mymeal_diningbillline.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_diningbillline" id="mymeal_diningbillline" Text="mymeal_diningbillline" Size="100,100"><Ctrls>
+<GroupBox Name="GB_diningtableid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_diningtableid" Size="60,20" Text="diningtableid" Align="Right"/>
+<TextBox Name="diningtableid" Size="160,20" Weight="160" ToolTip="ttp_diningtableid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_diningtime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_diningtime" Size="60,20" Text="diningtime" Align="Right"/>
+<DateTime Name="diningtime" Format="yyyy-MM-dd HH:mm:ss" Size="160,20" Weight="160" ToolTip="ttp_diningtime"></DateTime>
+</Ctrls></GroupBox><GroupBox Name="GB_billid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_billid" Size="60,20" Text="billid" Align="Right"/>
+<ComboBox Name="billid" Size="160,100" Weight="160"  ToolTip="ttp_billid" SelectedIndex="0" OnLoad="init">
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_diningbill</DbTable><Data>DocNo,TableID as diningtableid,billid</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_productid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><MagicCtrl Name="productid" ToolTip="ttp_productid" Size="220,200" Link="LinkLine:2;HoverColor:0x234511;UseHand:2" feature="carousel" onload="init">
+	<dfmap><map name="text" value="name"/></dfmap><DbDetails fcsm="1"><DbTable>mymeal.mymeal_product</DbTable><Data>Name,images,RetailPrice as price,discount,DefaultUnitID as unitid,IsDiscount,ProductID</Data><Where>producttype!='raw_product'</Where><queryFormat></queryFormat></DbDetails></MagicCtrl>
+</Ctrls></GroupBox><GroupBox Name="GB_tempproductname" Multiline="0" cols="xs12 sm12 md6 lg4"><Ctrls><Label Name="lb_tempproductname" Size="60,20" Text="tempproductname" Align="Right"/>
+<TextBox Name="tempproductname" Size="160,20" Weight="160" ToolTip="ttp_tempproductname"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_statusid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_statusid" Size="60,20" Text="statusid" Align="Right"/>
+<ComboBox Name="statusid" Size="160,100" Weight="160"  ToolTip="ttp_statusid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_enum</DbTable><Data>EnumValue,EnumId</Data><Where>enumtype='dining_line_status'</Where><queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="130,20" Weight="130" ToolTip="ttp_price"></TextBox><TextBox Name="unitid" Size="30,20" ToolTip="ttp_unitid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_discount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_discount" Size="60,20" Text="discount" Align="Right"/>
+<TextBox Name="discount" Size="160,20" Weight="160" ToolTip="ttp_discount"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_discountprice" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_discountprice" Size="60,20" Text="discountprice" Align="Right"/>
+<TextBox Name="discountprice" Size="160,20" Weight="160" ToolTip="ttp_discountprice"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="160,20" Weight="160" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_amount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_amount" Size="60,20" Text="amount" Align="Right"/>
+<TextBox Name="amount" Size="160,20" Weight="160" ToolTip="ttp_amount"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_diningnotes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_diningnotes" Size="60,20" Text="diningnotes" Align="Right"/>
+<TextBox Name="diningnotes" Size="160,20" Weight="160" ToolTip="ttp_diningnotes"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_ispackage" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="ispackage" Size="220,20" Text="ispackage" ToolTip="ttp_ispackage"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_beforemergebillid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_beforemergebillid" Size="60,20" Text="beforemergebillid" Align="Right"/>
+<TextBox Name="beforemergebillid" Size="160,20" Weight="160" ToolTip="ttp_beforemergebillid"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_isdelete" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><CheckBox Name="isdelete" Size="220,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+</Ctrls></GroupBox><GroupBox Name="GB_deletetime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_deletetime" Size="60,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="160,20" Weight="160" ToolTip="ttp_deletetime"></DateTime>
+</Ctrls></GroupBox><GroupBox Name="GB_giveqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_giveqty" Size="60,20" Text="giveqty" Align="Right"/>
+<TextBox Name="giveqty" Size="160,20" Weight="160" ToolTip="ttp_giveqty"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_backprintqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_backprintqty" Size="60,20" Text="backprintqty" Align="Right"/>
+<TextBox Name="backprintqty" Size="160,20" Weight="160" ToolTip="ttp_backprintqty"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_givebackprintqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_givebackprintqty" Size="60,20" Text="givebackprintqty" Align="Right"/>
+<TextBox Name="givebackprintqty" Size="160,20" Weight="160" ToolTip="ttp_givebackprintqty"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_returnbackprintqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_returnbackprintqty" Size="60,20" Text="returnbackprintqty" Align="Right"/>
+<TextBox Name="returnbackprintqty" Size="160,20" Weight="160" ToolTip="ttp_returnbackprintqty"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_returnnotes" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_returnnotes" Size="60,20" Text="returnnotes" Align="Right"/>
+<TextBox Name="returnnotes" Size="160,20" Weight="160" ToolTip="ttp_returnnotes"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_returnqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_returnqty" Size="60,20" Text="returnqty" Align="Right"/>
+<TextBox Name="returnqty" Size="160,20" Weight="160" ToolTip="ttp_returnqty"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_checkreturnqty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_checkreturnqty" Size="60,20" Text="checkreturnqty" Align="Right"/>
+<TextBox Name="checkreturnqty" Size="160,20" Weight="160" ToolTip="ttp_checkreturnqty"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_checkreturnamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_checkreturnamount" Size="60,20" Text="checkreturnamount" Align="Right"/>
+<TextBox Name="checkreturnamount" Size="160,20" Weight="160" ToolTip="ttp_checkreturnamount"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_checkreturnnote" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_checkreturnnote" Size="60,20" Text="checkreturnnote" Align="Right"/>
+<TextBox Name="checkreturnnote" Size="160,20" Weight="160" ToolTip="ttp_checkreturnnote"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_billlineid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_billlineid" Size="60,20" Text="billlineid" Align="Right"/>
+<TextBox Name="billlineid" Size="160,20" Weight="160" ToolTip="ttp_billlineid"></TextBox>
+</Ctrls></GroupBox><GroupBox Name="GB_operatorid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_operatorid" Size="60,20" Text="operatorid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="operatorid" Size="160,20" Weight="160" ToolTip="ttp_operatorid" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox Name="GB_id_corp" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls><Label Name="lb_id_corp" Size="60,20" Text="id_corp" Align="Right"/>
+<TextBox Name="id_corp" Size="160,20" Weight="160" ToolTip="ttp_id_corp"></TextBox>
+</Ctrls></GroupBox><BR AutoHeight="1"/><GroupBox  Name="GBOPmymeal_diningbillline" Size="100,100" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Name="insertmymeal_diningbillline" Size="50,20" Text="create" ToolTip="ttp_insertmymeal_diningbillline">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_diningbillline</DbTable><Data>diningtableid,diningtime,billid[tableid],productid[productid],tempproductname,statusid[enumid],price,unitid,discount,discountprice,quantity,amount,diningnotes,ispackage,beforemergebillid,isdelete,deletetime,giveqty,backprintqty,givebackprintqty,returnbackprintqty,returnnotes,returnqty,checkreturnqty,checkreturnamount,checkreturnnote,billlineid,operatorid,id_corp</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_diningbillline" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_diningbillline" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_diningbillline">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_diningbillline</DbTable><Data>diningtableid,diningtime,billid[tableid],productid[productid],tempproductname,statusid[enumid],price,unitid,discount,discountprice,quantity,amount,diningnotes,ispackage,beforemergebillid,isdelete,deletetime,giveqty,backprintqty,givebackprintqty,returnbackprintqty,returnnotes,returnqty,checkreturnqty,checkreturnamount,checkreturnnote,billlineid,operatorid,id_corp</Data><Where>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_diningbillline" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="deletemymeal_diningbillline" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_diningbillline">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_diningbillline</DbTable><Where>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_diningbillline" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_diningbillline" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_diningbillline">
+			  <OnClick><submit next="mymeal_diningbilllineLst"/>	</OnClick>
+</Button>
+<TAB/><Button Name="FPmymeal_diningbilllineLst" Size="40,20" Text="firstpage" OnClick="(mymeal_diningbilllineLst)GetPage(First)"></Button>
+<Button Name="PREmymeal_diningbilllineLst" Size="40,20" Text="prepage" OnClick="(mymeal_diningbilllineLst)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_diningbilllineLst" Size="40,20" Text="nextpage" OnClick="(mymeal_diningbilllineLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+<BR/><GroupBox Name="GBDVmymeal_diningbillline" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="mymeal_diningbilllineLst" ToolTip="ttp_mymeal_diningbillline" Size="700,420" PageSize="10" loadedclick="0" Heading="diningtime,150;billid,120;productid,55;tempproductname,320;statusid,120;discountprice,90;quantity,90;amount,90;diningnotes,20;ispackage,60;beforemergebillid,55;isdelete,60;deletetime,150;giveqty,90;backprintqty,90;givebackprintqty,90;returnbackprintqty,90;returnnotes,20;returnqty,90;checkreturnqty,90;checkreturnamount,90;checkreturnnote,20;billlineid,55;operatorid,55;id_corp,55;" onload="init">
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_diningbillline</DbTable><Index>billlineid='%{mymeal_diningbilllineLst[billlineid]}'</Index><Data>diningtime,billid,productid,tempproductname,statusid,discountprice,quantity,amount,diningnotes,ispackage,beforemergebillid,isdelete,deletetime,giveqty,backprintqty,givebackprintqty,returnbackprintqty,returnnotes,returnqty,checkreturnqty,checkreturnamount,checkreturnnote,billlineid,operatorid,id_corp</Data><Order>billlineid</Order></DbDetails>
+<OnClick><assign name="billid[billid]" expr="%{mymeal_diningbilllineLst[billid]}" function="SetSel"/><assign name="productid[productid]" expr="%{mymeal_diningbilllineLst[productid]}" function="SetSel"/><assign name="statusid[enumid]" expr="%{mymeal_diningbilllineLst[statusid]}" function="SetSel"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

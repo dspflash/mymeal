@@ -1,0 +1,14 @@
+﻿<WndTap Name="mymeal_businesstime_v" Text="mymeal_businesstime">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_businesstime_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_businesstime.xml"/>
+<Ctrls><GroupBox  Name="GBmymeal_businesstime" id="mymeal_businesstime" Text="mymeal_businesstime" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_businesstime_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVmymeal_businesstime" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.mymeal_businesstime.GBDEDITmymeal_businesstime" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetmymeal_businesstime" Name="resetmymeal_businesstime" Size="50,20">	<OnClick>	<submit next="GBDEDITmymeal_businesstime" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchmymeal_businesstime" Name="gsearchmymeal_businesstime" Size="50,20" visible="true">	<OnClick>	<search next="mymeal_businesstime_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITmymeal_businesstime" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_businesstime_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

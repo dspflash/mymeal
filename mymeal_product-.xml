@@ -1,0 +1,106 @@
+<WndTap Name="mymeal_product" Text="mymeal_product">
+<xi:include href="mymeal_product_lan.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_product" id="mymeal_product" Text="mymeal_product" Size="100,100"><Ctrls>
+<Label Name="lb_name" Size="90,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="150,20" ToolTip="ttp_name"></TextBox>
+<Label Name="lb_code" Size="90,20" Text="code" Align="Right"/>
+<TextBox Name="code" Size="120,20" ToolTip="ttp_code"></TextBox>
+<Label Name="lb_shortcode" Size="90,20" Text="shortcode" Align="Right"/>
+<TextBox Name="shortcode" Size="60,20" ToolTip="ttp_shortcode"></TextBox>
+<CheckBox Name="isautocode" Size="60,20" Text="isautocode" ToolTip="ttp_isautocode"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_producttype" Size="90,20" Text="producttype" Align="Right"/>
+<ComboBox Name="producttype" Size="90,100"  ToolTip="ttp_producttype" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_productcategory</DbTable><Data>distinct producttype</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+<Label Name="lb_categoryid" Size="90,20" Text="categoryid" Align="Right"/>
+<ComboBox Name="categoryid" Size="90,100"  ToolTip="ttp_categoryid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_productcategory</DbTable><Data>Name,categoryid</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+<BR AutoHeight="1"/><Label Name="lb_purchaseprice" Size="90,20" Text="purchaseprice" Align="Right"/>
+<TextBox Name="purchaseprice" Size="90,20" ToolTip="ttp_purchaseprice"></TextBox>
+<Label Name="lb_retailprice" Size="90,20" Text="retailprice" Align="Right"/>
+<TextBox Name="retailprice" Size="90,20" ToolTip="ttp_retailprice"></TextBox>
+<CheckBox Name="iscurrentprice" Size="90,20" Text="iscurrentprice" ToolTip="ttp_iscurrentprice"></CheckBox>
+<CheckBox Name="istempproduct" Size="90,20" Text="istempproduct" ToolTip="ttp_istempproduct"></CheckBox>
+<CheckBox Name="ismultilunit" Size="90,20" Text="ismultilunit" ToolTip="ttp_ismultilunit"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_defaultunitid" Size="90,20" Text="defaultunitid" Align="Right"/>
+<ComboBox Name="defaultunitid" Size="90,100"  ToolTip="ttp_defaultunitid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_unit</DbTable><Data>Name,UnitID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+<Label Name="lb_minunitid" Size="90,20" Text="minunitid" Align="Right"/>
+<ComboBox Name="minunitid" Size="90,100"  ToolTip="ttp_minunitid" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_unit</DbTable><Data>Name,UnitID</Data><Where></Where><queryFormat></queryFormat></DbDetails></ComboBox>
+<CheckBox Name="ispackage" Size="90,20" Text="ispackage" ToolTip="ttp_ispackage"></CheckBox>
+<CheckBox Name="isdisplayassemble" Size="90,20" Text="isdisplayassemble" ToolTip="ttp_isdisplayassemble"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_minquantity" Size="90,20" Text="minquantity" Align="Right"/>
+<TextBox Name="minquantity" Size="90,20" ToolTip="ttp_minquantity"></TextBox>
+<Label Name="lb_maxquantity" Size="90,20" Text="maxquantity" Align="Right"/>
+<TextBox Name="maxquantity" Size="90,20" ToolTip="ttp_maxquantity"></TextBox>
+<CheckBox Name="isstockcontrol" Size="90,20" Text="isstockcontrol" ToolTip="ttp_isstockcontrol"></CheckBox>
+<CheckBox Name="isminstockcontrol" Size="90,20" Text="isminstockcontrol" ToolTip="ttp_isminstockcontrol"></CheckBox>
+<CheckBox Name="ismaxstockcontrol" Size="90,20" Text="ismaxstockcontrol" ToolTip="ttp_ismaxstockcontrol"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_costmethod" Size="90,20" Text="costmethod" Align="Right"/>
+<ComboBox Name="costmethod" Size="90,100"  ToolTip="ttp_costmethod" SelectedIndex="0" OnLoad="init">
+	<DbDetails><DbTable>mymeal.mymeal_enum</DbTable><Data>EnumValue,EnumId</Data><Where>enumtype='COST_METHOD'</Where><queryFormat></queryFormat></DbDetails></ComboBox>
+<Label Name="lb_validperiod" Size="90,20" Text="validperiod" Align="Right"/>
+<TextBox Name="validperiod" Size="55,20" ToolTip="ttp_validperiod"></TextBox>
+<CheckBox Name="isvalidperiodcontrol" Size="90,20" Text="isvalidperiodcontrol" ToolTip="ttp_isvalidperiodcontrol"></CheckBox>
+<CheckBox Name="ismanuallot" Size="90,20" Text="ismanuallot" ToolTip="ttp_ismanuallot"></CheckBox>
+<CheckBox Name="isvoid" Size="90,20" Text="isvoid" ToolTip="ttp_isvoid"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_notes" Size="90,20" Text="notes" Align="Right"/>
+<TextBox Name="notes" Size="200,20" ToolTip="ttp_notes"></TextBox>
+<CheckBox Name="iscostcontrol" Size="90,20" Text="iscostcontrol" ToolTip="ttp_iscostcontrol"></CheckBox>
+<Label Name="lb_discount" Size="90,20" Text="discount" Align="Right"/>
+<ComboBox Name="discount" Size="60,100" Items="6~10*10" ToolTip="ttp_discount" SelectedIndex="0" OnLoad="init"></ComboBox>
+<CheckBox Name="isdiscount" Size="90,20" Text="isdiscount" ToolTip="ttp_isdiscount"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_waiterbonus" Size="90,20" Text="waiterbonus" Align="Right"/>
+<TextBox Name="waiterbonus" Size="90,20" ToolTip="ttp_waiterbonus"></TextBox>
+<CheckBox Name="iswaiterbonus" Size="90,20" Text="iswaiterbonus" ToolTip="ttp_iswaiterbonus"></CheckBox>
+<CheckBox Name="isrankbonus" Size="90,20" Text="isrankbonus" ToolTip="ttp_isrankbonus"></CheckBox>
+<Label Name="lb_deletetime" Size="90,20" Text="deletetime" Align="Right"/>
+<DateTime Name="deletetime" Format="yyyy-MM-dd HH:mm:ss" Size="150,20" ToolTip="ttp_deletetime"></DateTime>
+<CheckBox Name="isdelete" Size="90,20" Text="isdelete" ToolTip="ttp_isdelete"></CheckBox>
+<BR AutoHeight="1"/><Label Name="lb_bomfixcost" Size="90,20" Text="bomfixcost" Align="Right"/>
+<TextBox Name="bomfixcost" Size="90,20" ToolTip="ttp_bomfixcost"></TextBox>
+<CheckBox Name="isbom" Size="90,20" Text="isbom" ToolTip="ttp_isbom"></CheckBox>
+<CheckBox Name="isbomfixcost" Size="90,20" Text="isbomfixcost" ToolTip="ttp_isbomfixcost"></CheckBox>
+<Label Name="lb_images" Size="90,20" Text="images" Align="Right"/>
+<TextBox Name="images" Size="250,20" ToolTip="ttp_images"></TextBox>
+<Label Name="lb_id_corp" Size="90,20" Text="id_corp" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="id_corp" Size="55,20" ToolTip="ttp_id_corp" Visible="false" overlap="pre"></TextBox>
+<Label Name="lb_productid" Size="90,20" Text="productid" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="productid" Size="55,20" ToolTip="ttp_productid" Visible="false" overlap="pre"></TextBox>
+<BR AutoHeight="1"/><MagicCtrl Name="mymeal_productmagic" feature="carousel" ToolTip="ttp_mymeal_product" Size="520,312" link="LinkLine:2;HoverColor:0x234511;UseHand:2;Tip:tooltipinfo" Onload="init">
+<dfmap><map name="text" value="name"/></dfmap>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_product</DbTable><Index>productid='%{mymeal_productmagic[productid]}'</Index><Data>name,code,shortcode,isautocode,producttype,categoryid,purchaseprice,retailprice,iscurrentprice,istempproduct,ismultilunit,defaultunitid,minunitid,ispackage,isdisplayassemble,minquantity,maxquantity,isstockcontrol,isminstockcontrol,ismaxstockcontrol,costmethod,validperiod,isvalidperiodcontrol,ismanuallot,isvoid,notes,iscostcontrol,discount,isdiscount,waiterbonus,iswaiterbonus,isrankbonus,deletetime,isdelete,bomfixcost,isbom,isbomfixcost,images,id_corp,productid</Data></DbDetails>
+<OnClick><assign name="producttype[producttype]" expr="%{mymeal_productmagic[producttype]}" function="SetSel"/><assign name="categoryid[categoryid]" expr="%{mymeal_productmagic[categoryid]}" function="SetSel"/><assign name="defaultunitid[UnitID]" expr="%{mymeal_productmagic[defaultunitid]}" function="SetSel"/><assign name="minunitid[UnitID]" expr="%{mymeal_productmagic[minunitid]}" function="SetSel"/><assign name="costmethod[EnumId]" expr="%{mymeal_productmagic[costmethod]}" function="SetSel"/></OnClick>
+<DbDetails fcsm="1"><where>CategoryID=2</where></DbDetails></MagicCtrl>
+<TAB/><GroupBox  Name="GBOPmymeal_product" Text="operation" Size="100,100"><Ctrls>
+<Button Name="insertmymeal_product" Size="50,20" Text="create" ToolTip="ttp_insertmymeal_product">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_product</DbTable><Data>name,code,shortcode,isautocode,producttype[producttype],categoryid[categoryid],purchaseprice,retailprice,iscurrentprice,istempproduct,ismultilunit,defaultunitid[UnitID],minunitid[UnitID],ispackage,isdisplayassemble,minquantity,maxquantity,isstockcontrol,isminstockcontrol,ismaxstockcontrol,costmethod[EnumId],validperiod,isvalidperiodcontrol,ismanuallot,isvoid,notes,iscostcontrol,discount,isdiscount,waiterbonus,iswaiterbonus,isrankbonus,deletetime,isdelete,bomfixcost,isbom,isbomfixcost,images,id_corp,productid</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_product" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifymymeal_product" Size="50,20" Text="modify" ToolTip="ttp_modifymymeal_product">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_product</DbTable><Data>name,code,shortcode,isautocode,producttype[producttype],categoryid[categoryid],purchaseprice,retailprice,iscurrentprice,istempproduct,ismultilunit,defaultunitid[UnitID],minunitid[UnitID],ispackage,isdisplayassemble,minquantity,maxquantity,isstockcontrol,isminstockcontrol,ismaxstockcontrol,costmethod[EnumId],validperiod,isvalidperiodcontrol,ismanuallot,isvoid,notes,iscostcontrol,discount,isdiscount,waiterbonus,iswaiterbonus,isrankbonus,deletetime,isdelete,bomfixcost,isbom,isbomfixcost,images,id_corp,productid</Data><Where>productid='%{mymeal_productmagic[productid]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_product" function="click"/>
+	</OnClick>
+	</Button><BR/>
+<Button Name="deletemymeal_product" Size="50,20" Text="delete" ToolTip="ttp_deletemymeal_product">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>mymeal.mymeal_product</DbTable><Where>productid='%{mymeal_productmagic[productid]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmymeal_product" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchmymeal_product" Size="50,20" Text="refresh" ToolTip="ttp_refreshmymeal_product">
+			  <OnClick><submit next="mymeal_productmagic"/>	</OnClick>
+</Button>
+<BR/><Button Name="FPmymeal_productLst" Size="40,20" Text="firstpage" OnClick="(mymeal_productmagic)GetPage(First)"></Button>
+<Button Name="PREmymeal_productLst" Size="40,20" Text="prepage" OnClick="(mymeal_productmagic)GetPage(Pre)"></Button>
+<Button Name="NPmymeal_productLst" Size="40,20" Text="nextpage" OnClick="(mymeal_productmagic)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

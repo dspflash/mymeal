@@ -1,0 +1,138 @@
+﻿<GroupBox Name="GBDEDITmymeal_diningbillline"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_productid"><Ctrls>
+<MagicCtrl ToolTip="ttp_productid" OnLoad="init" Name="productid" Link="LinkLine:2;HoverColor:0x234511;UseHand:2" Size="230,20">
+	<DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Index>productid</Index>
+<Data>Name,images,RetailPrice as price,IsDiscount,ProductID</Data>
+<Where>producttype!='raw_product'</Where>
+<queryFormat/></DbDetails><dfmap><map name="text" value="name"/></dfmap></MagicCtrl>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningtableid"><Ctrls>
+<Label Align="Right" Text="diningtableid" Name="lb_diningtableid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_diningtableid" Name="diningtableid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_billid"><Ctrls>
+<Label Align="Right" Text="billid" Name="lb_billid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_billid" Name="billid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningtime"><Ctrls>
+<Label Align="Right" Text="diningtime" Name="lb_diningtime" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_diningtime" Name="diningtime" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_tempproductname"><Ctrls>
+<Label Align="Right" Text="tempproductname" Name="lb_tempproductname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tempproductname" Name="tempproductname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_statusid"><Ctrls>
+<Label Align="Right" Text="statusid" onload="init" Name="lb_statusid" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_statusid" onload="init" Name="statusid" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_enum</DbTable>
+<Index/>
+<Data>EnumValue</Data>
+<Where>enumtype='dining_line_status'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_unitid"><Ctrls>
+<Label Align="Right" Text="unitid" onload="init" Name="lb_unitid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_unitid" onload="init" Name="unitid" Size="170,20">
+	<DbDetails>
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Index>unitid</Index>
+<Data>Name,UnitID</Data>
+<Where>productid='%{productid[productid]}'</Where>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discount"><Ctrls>
+<Label Align="Right" Text="discount" Name="lb_discount" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_discount" Name="discount" Size="170,100">
+	<DbDetails>
+<DbTable>mymeal.mymeal_discount</DbTable>
+<Index/>
+<Data>Discount,DiscountPrice,DiscountType</Data>
+<Where>productid='%{productid[productid]}'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_discountprice"><Ctrls>
+<Label Align="Right" Text="discountprice" Name="lb_discountprice" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_discountprice" Name="discountprice" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_quantity"><Ctrls>
+<SpinButton ToolTip="ttp_quantity" Name="quantity" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_amount"><Ctrls>
+<Label Align="Right" Text="amount" Name="lb_amount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_amount" Name="amount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_diningnotes"><Ctrls>
+<Label Align="Right" Text="diningnotes" Name="lb_diningnotes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_diningnotes" Name="diningnotes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_ispackage"><Ctrls>
+<CheckBox Text="ispackage" ToolTip="ttp_ispackage" Name="ispackage" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_beforemergebillid"><Ctrls>
+<Label Align="Right" Text="beforemergebillid" Name="lb_beforemergebillid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_beforemergebillid" Name="beforemergebillid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_giveqty"><Ctrls>
+<Label Align="Right" Text="giveqty" Name="lb_giveqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_giveqty" Name="giveqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isdelete"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" Name="isdelete" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_deletetime"><Ctrls>
+<Label Align="Right" Text="deletetime" Name="lb_deletetime" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_deletetime" Name="deletetime" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_returnnotes"><Ctrls>
+<Label Align="Right" Text="returnnotes" Name="lb_returnnotes" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnnotes" Name="returnnotes" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_returnqty"><Ctrls>
+<Label Align="Right" Text="returnqty" Name="lb_returnqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnqty" Name="returnqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_checkreturnqty"><Ctrls>
+<Label Align="Right" Text="checkreturnqty" Name="lb_checkreturnqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_checkreturnqty" Name="checkreturnqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_checkreturnamount"><Ctrls>
+<Label Align="Right" Text="checkreturnamount" Name="lb_checkreturnamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_checkreturnamount" Name="checkreturnamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_checkreturnnote"><Ctrls>
+<Label Align="Right" Text="checkreturnnote" Name="lb_checkreturnnote" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_checkreturnnote" Name="checkreturnnote" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_operatorid"><Ctrls>
+<Label Align="Right" Text="operatorid" Name="lb_operatorid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_operatorid" Name="operatorid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_backprintqty"><Ctrls>
+<Label Align="Right" Text="backprintqty" Name="lb_backprintqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_backprintqty" Name="backprintqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_givebackprintqty"><Ctrls>
+<Label Align="Right" Text="givebackprintqty" Name="lb_givebackprintqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_givebackprintqty" Name="givebackprintqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_returnbackprintqty"><Ctrls>
+<Label Align="Right" Text="returnbackprintqty" Name="lb_returnbackprintqty" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_returnbackprintqty" Name="returnbackprintqty" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" Name="lb_id_corp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" Name="id_corp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_billlineid"><Ctrls>
+<Label Align="Right" Text="billlineid" Name="lb_billlineid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_billlineid" Name="billlineid" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

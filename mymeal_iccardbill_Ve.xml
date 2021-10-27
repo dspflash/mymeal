@@ -1,0 +1,13 @@
+﻿<WndTap Name="mymeal_iccardbill" Text="mymeal_iccardbill" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\mymeal_iccardbill.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBmymeal_iccardbill" id="mymeal_iccardbill" Text="mymeal_iccardbill" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_iccardbill_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_iccardbill_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mymeal_iccardbill_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertmymeal_iccardbill" Visible="1"/><SetVisible name="modifymymeal_iccardbill" Visible="0"/></OnActivate>
+</WndTap>

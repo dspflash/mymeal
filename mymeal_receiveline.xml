@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><WndTap Text="mymeal_receiveline" Name="mymeal_receiveline" Ver="2"><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\mymeal_receiveline.xml"></xi:include>
+<Ctrls>
+<GroupBox Text="mymeal_receiveline" Name="GBmymeal_receiveline" id="mymeal_receiveline" Size="100,100"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_productid"><Ctrls>
+<Label Align="Right" Text="productid" OnLoad="init" Name="lb_productid" Size="60,20"/>
+<ComboBox Weight="170" ToolTip="ttp_productid" OnLoad="init" Name="productid" Size="170,100" SelectedIndex="0">
+  <DbDetails>
+<DbTable>mymeal.mymeal_product</DbTable>
+<Data>Name,ProductID</Data>
+<Where/>
+<queryFormat/></DbDetails>
+<OnSelEndOk><submit next="unitid"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_stockid"><Ctrls>
+<Label Align="Right" Text="stockid" OnLoad="init" Name="lb_stockid" Size="60,20"/>
+<ComboBox Weight="170" ToolTip="ttp_stockid" OnLoad="init" Name="stockid" Size="170,100" SelectedIndex="0">
+  <DbDetails>
+<DbTable>mymeal.mymeal_stock</DbTable>
+<Data>Name,StockID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_receiveid"><Ctrls>
+<Label Align="Right" Text="receiveid" OnLoad="init" Name="lb_receiveid" Size="60,20"/>
+<ComboBox Weight="170" ToolTip="ttp_receiveid" OnLoad="init" Name="receiveid" Size="170,100" SelectedIndex="0">
+  <DbDetails>
+<DbTable>mymeal.mymeal_receive</DbTable>
+<Data>DocNo,ReceiveID</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_unitid"><Ctrls>
+<Label Align="Right" Text="unitid" OnLoad="init" Name="lb_unitid" Size="60,20"/>
+<ComboBox Weight="170" ToolTip="ttp_unitid" OnLoad="init" Name="unitid" Size="170,100" SelectedIndex="0">
+  <DbDetails>
+<DbTable>mymeal.mymeal_unit</DbTable>
+<Data>Name,UnitID</Data>
+<Where>productid='%{productid[productid]}'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_quantity"><Ctrls>
+<Label Align="Right" Text="quantity" Name="lb_quantity" Size="60,20"/>
+<TextBox Weight="170" ToolTip="ttp_quantity" Name="quantity" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_amount"><Ctrls>
+<Label Align="Right" Text="amount" Name="lb_amount" Size="60,20"/>
+<TextBox Weight="170" ToolTip="ttp_amount" Name="amount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_expiration"><Ctrls>
+<Label Align="Right" Text="expiration" Name="lb_expiration" Size="60,20"/>
+<TextBox Weight="170" ToolTip="ttp_expiration" Name="expiration" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_isdelete"><Ctrls>
+<CheckBox Text="isdelete" ToolTip="ttp_isdelete" Name="isdelete" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_deletetime"><Ctrls>
+<Label Align="Right" Text="deletetime" Name="lb_deletetime" Size="60,20"/>
+<DateTime Weight="170" ToolTip="ttp_deletetime" Name="deletetime" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" Name="lb_id_corp" Size="60,20"/>
+<TextBox Weight="170" ToolTip="ttp_id_corp" Name="id_corp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_receivelineid"><Ctrls>
+<Label Align="Right" Text="receivelineid" overlap="pre" Name="lb_receivelineid" Size="60,20" Visible="false"/>
+<TextBox Weight="170" ToolTip="ttp_receivelineid" overlap="pre" Name="receivelineid" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPmymeal_receiveline" Size="100,100"><Ctrls>
+<Button Text="create" ToolTip="ttp_createmymeal_receiveline" Name="insertmymeal_receiveline" Size="50,20">
+  <OnClick>
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receiveline</DbTable>
+<Data>productid[productid],stockid[stockid],receiveid[receiveid],unitid[unitid],quantity,price,amount,expiration,isdelete,deletetime,id_corp</Data>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+  <submit namelist="DbDetails"/><submit next="searchmymeal_receiveline" function="click"/>
+  </OnClick>
+  </Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymymeal_receiveline" Name="modifymymeal_receiveline" Size="50,20">
+  <OnClick>
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receiveline</DbTable>
+<Data>productid[productid],stockid[stockid],receiveid[receiveid],unitid[unitid],quantity,price,amount,expiration,isdelete,deletetime,id_corp</Data>
+<Where>receivelineid='%{mymeal_receivelineLst[receivelineid]}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+  <submit namelist="DbDetails"/><submit next="searchmymeal_receiveline" function="click"/>
+  </OnClick>
+  </Button><TAB/>
+<Button Text="delete" ToolTip="ttp_deletemymeal_receiveline" Name="deletemymeal_receiveline" Size="50,20">
+  <OnClick>
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receiveline</DbTable>
+<Where>receivelineid='%{mymeal_receivelineLst[receivelineid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+  <submit namelist="DbDetails"/><submit next="searchmymeal_receiveline" function="click"/>
+  </OnClick>
+  </Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmymeal_receiveline" Name="searchmymeal_receiveline" Size="50,20">
+        <OnClick><submit next="mymeal_receivelineLst"/>  </OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPmymeal_receivelineLst" OnClick="(mymeal_receivelineLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREmymeal_receivelineLst" OnClick="(mymeal_receivelineLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPmymeal_receivelineLst" OnClick="(mymeal_receivelineLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>
+<BR/><GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmymeal_receiveline"><Ctrls>
+<ListCtrl Heading="productid,120;stockid,120;receiveid,120;unitid,120;quantity,90;price,90;amount,90;expiration,100;isdelete,60;deletetime,150;id_corp,55;receivelineid,55;" loadedclick="0" ToolTip="ttp_mymeal_receiveline" Name="mymeal_receivelineLst" Size="700,420" PageSize="10">
+  <DbDetails fcsm="1">
+<DbTable>mymeal.mymeal_receiveline</DbTable>
+<Index>receivelineid='%{mymeal_receivelineLst[receivelineid]}'</Index>
+<Data>productid,stockid,receiveid,unitid,quantity,price,amount,expiration,isdelete,deletetime,id_corp,receivelineid</Data>
+<Order>receivelineid</Order></DbDetails>
+<OnClick><assign name="productid[productid]" function="SetSel" expr="%{mymeal_receivelineLst[productid]}"/><assign name="stockid[stockid]" function="SetSel" expr="%{mymeal_receivelineLst[stockid]}"/><assign name="receiveid[receiveid]" function="SetSel" expr="%{mymeal_receivelineLst[receiveid]}"/><assign name="unitid[unitid]" function="SetSel" expr="%{mymeal_receivelineLst[unitid]}"/></OnClick>
+</ListCtrl>
+</Ctrls></GroupBox></Ctrls></GroupBox>
+</Ctrls>
+  <OnChanged/>
+  <OnActivate/>
+  </WndTap>
